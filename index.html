@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DocForge – Document-Driven Code Assistant</title>
+  <meta name="description" content="Open-source, local-first multi-agent system for Document-Driven Development – turning specs into code, docs, and test criteria while empowering tech writers and product teams">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1 {
+      color: #0066FF;
+      font-size: 2.4em;
+      border-bottom: 4px solid #0066FF;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #0066FF;
+      font-size: 1.8em;
+      margin-top: 3em;
+      border-bottom: 2px solid #0066FF;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #0066FF;
+      font-size: 1.4em;
+      margin-top: 2.5em;
+    }
+
+    p, ul, ol, li {
+      margin-bottom: 1.2em;
+    }
+
+    ul, ol {
+      padding-left: 2em;
+    }
+
+    a {
+      color: #0066FF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f8ff;
+      color: #0066FF;
+      font-weight: 700;
+    }
+
+    .diagram-placeholder {
+      background: #f0f8ff;
+      border: 2px dashed #0066FF;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+      color: #0066FF;
+      font-style: italic;
+    }
+
+    .links {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 2px solid #0066FF;
+    }
+  </style>
+</head>
+<body>
+
+<h1>DocForge – Document-Driven Code Assistant</h1>
+
+<h2>1. Description</h2>
+<p>DocForge is an open-source, local-first multi-agent system that enables <strong>Document-Driven Development (DDD)</strong> — a spec-first paradigm where detailed product documentation serves as the primary source of truth for development. The workflow begins with a clear handoff: Product Managers author user stories, definition of done, acceptance criteria, and feature impacts. These are handed off to Technical Writers, who own and author all product documentation for the release. DocForge ingests the writer's documents, validates them against configurable minimum standards (quality, quantity, variety), and generates a suite of deliverables including user guides, API docs, release notes, how-to articles, admin guides, and more. It also generates code skeletons and test criteria from approved specs, reviews code for compliance, and suggests updates when specs change. Built with LangGraph orchestration and open-source LLMs via Ollama, DocForge runs entirely offline for maximum privacy.</p>
+
+<h2>2. Executive Summary</h2>
+<p>DocForge transforms agile delivery by making documentation the strategic driver of development, while fully respecting the Agile Manifesto's principle of "working software over comprehensive documentation." It achieves this by using AI to automate the heavy lift of doc-code syncing, allowing teams to deliver working software faster through spec-first collaboration. PMs provide structured inputs; writers own authorship and quality; AI handles generation and maintenance. The system enforces configurable minimum standards for ingested docs, grays out unavailable deliverables with clear feedback, and allows writers to select/deselect outputs. All outputs adhere 100% to a user-uploaded style guide (e.g., Microsoft, Chicago, or custom) via automated agent enforcement. Configurable output formats (Jupyter, PDF, Markdown, HTML) ensure flexibility. Local-first execution addresses DevSecOps concerns with zero data leakage, making it ideal for enterprises. For tech writers, it eliminates grammar/style reviewers by automating adherence, freeing them to focus on craft. While ideal for teams that value collaboration, it acknowledges real-world demarcations — PMs hand off, writers author completely, and teams review/approve before cascading to devs/QA.</p>
+
+<h2>3. Business Strategy</h2>
+
+<h3>3.1 Strategic Value Proposition</h3>
+<p>DocForge reduces sprint rework by 50–70% by catching requirement-code drift early, eliminates manual documentation busywork, and elevates technical writers to spec architects. It respects agile by starting with "just-enough" docs (PM handoff), then generating comprehensive outputs after minimum standards are met. The 12 deliverable categories (from user guides to compliance docs) are generated/updated in one click, with writers owning authorship. This changes the cycle from "docs later" to "specs first, automation throughout," delivering working software faster while valuing collaboration. To address agile skeptics who prefer "working software over comprehensive documentation," DocForge pitches as "working software through intelligent documentation" — automating non-essential tasks later in the cycle, but enabling earlier alignment to avoid waste.</p>
+
+<h3>3.2 Regulatory Strategy</h3>
+<p>All processing occurs locally with no external network calls. Document uploads remain on-device. Style guide and spec data never leave the machine. Open-source code enables security audits. Configurable standards support compliance-level documentation requirements. Outputs include governance/compliance deliverables like versioning policies and content audits.</p>
+
+<h2>4. Users</h2>
+
+<h3>4.1 Target User Personas</h3>
+<ul>
+  <li><strong>Product Manager</strong>: Authors user stories, DoD, AC, feature impacts; hands off to writer; reviews/approves drafts.</li>
+  <li><strong>Technical Writer</strong>: Receives PM handoff; owns and authors all docs; uses DocForge to generate suite; refines outputs.</li>
+  <li><strong>Developer</strong>: Receives approved drafts with code skeletons; implements with compliance feedback.</li>
+  <li><strong>QA Engineer</strong>: Receives test criteria from approved specs.</li>
+</ul>
+
+<h3>4.2 Lightweight Requirements and User Stories</h3>
+<p>As a PM, I want to hand off structured specs to writers, so they own quality.</p>
+<p>As a writer, I want to generate a configurable suite of docs from ingested specs, with unavailable types grayed out and explained.</p>
+<p>As a writer, I want all outputs to adhere 100% to my uploaded style guide automatically.</p>
+<p>As a writer, I want to select/deselect deliverables and configure output formats.</p>
+<p>As a team, I want approved drafts to cascade to devs/QA with code/test suggestions.</p>
+
+<h3>4.3 User Journey Map</h3>
+<ol>
+  <li>PM authors user stories/DoD/AC → hands off to writer.</li>
+  <li>Writer uploads style guide (one-time) and release specs.</li>
+  <li>DocForge validates against minimum standards → grays out unavailable deliverables with explanation.</li>
+  <li>Writer selects desired outputs and formats → generates suite.</li>
+  <li>Writer refines AI outputs → marks drafts ready for review.</li>
+  <li>PM/Dev/QA review/approve → approved drafts cascade (code skeletons, test criteria).</li>
+  <li>Writer exports final deliverables.</li>
+</ol>
+
+<h2>5. Design and Architecture</h2>
+
+<h3>5.1 Phase A: Vision</h3>
+<p>Enable Document-Driven Development by making specifications the central, living artifact that AI uses to generate, validate, and maintain code and comprehensive documentation suites, respecting agile handoffs and minimum standards.</p>
+
+<h3>5.2 Phase B: Business</h3>
+<p>Core capabilities: spec ingestion with minimum standard validation, style guide enforcement, selective multi-deliverable generation, compliance review, change impact analysis. Success metrics: rework reduction, documentation completion rate, style adherence score, sprint velocity improvement.</p>
+
+<h3>5.3 Phase C: Information</h3>
+<p>Primary inputs: PM handoff docs + writer-owned specs + style guide. State tracks versions, approval status, generated outputs. Local persistence in JSON.</p>
+
+<h3>5.4 Phase D: Technology</h3>
+<ul>
+  <li>App: Streamlit dashboard for writer view (ingest, standards config, style upload, selection, generation)</li>
+  <li>Agent: LangGraph agents (SpecValidator, StyleEnforcer, DeliverableGenerator with sub-specializations, ComplianceChecker, ChangeAnalyzer)</li>
+  <li>Platform: LlamaIndex for doc indexing/retrieval</li>
+  <li>Model: Ollama with code-focused LLMs (DeepSeek-Coder default)</li>
+  <li>Infrastructure: Local Docker with no external dependencies</li>
+</ul>
+
+<h2>6. Rollout and Roadmap - Implementation Phases and PI Mapping</h2>
+
+<h3>6.1 Current State</h3>
+<p>MVP with spec ingestion, minimum standard validation, style guide enforcement, selective generation of core deliverables, compliance review.</p>
+
+<h3>6.2 Future State</h3>
+<ul>
+  <li>Jira integration for automated handoff</li>
+  <li>Team review workflow with comments</li>
+  <li>Custom deliverable templates</li>
+  <li>Multi-user collaboration</li>
+</ul>
+
+<h3>6.3 Agile Delivery - ART</h3>
+<p>PI-1: Spec ingestion, standards validator, style enforcer  
+PI-2: Deliverable generator for core types  
+PI-3: Compliance checker and change analyzer  
+PI-4: Approval workflow and cascade exports  
+PI-5: Output format configuration and polish</p>
+
+<h3>6.4 Change Management</h3>
+<p>Open-source with contribution guidelines for new deliverable types. Configurable standards for team adaptation.</p>
+
+<h3>6.5 Target Value Stream</h3>
+<p>PM handoff → Writer ingestion & generation → Team review/approval → Cascade to dev/QA → Sync on changes → Release</p>
+
+<h2>7. Multi-Agent Model</h2>
+
+<h3>7.1 Agent Personas</h3>
+<ul>
+  <li>SpecValidator Agent: Checks minimum standards, grays out unavailable deliverables</li>
+  <li>StyleEnforcer Agent: Applies uploaded style guide automatically (100% adherence)</li>
+  <li>DeliverableGenerator Agent: Specialized sub-agents for each type (e.g., ApiDocsAgent, ReleaseNotesAgent)</li>
+  <li>ComplianceChecker Agent: Verifies code vs approved spec</li>
+  <li>ChangeAnalyzer Agent: Detects spec/code diffs and suggests updates</li>
+</ul>
+
+<h3>7.2 Reasoning Trace</h3>
+<p>Full trace showing how spec sections map to outputs and style rules applied.</p>
+
+<h3>7.3 Decision Matrix and Conflict Resolution</h3>
+<p>Standards validator scores input adequacy. StyleEnforcer auto-corrects deviations. Conflicts prioritized by approval status (approved spec wins).</p>
+
+<h2>8. Intelligence Platform</h2>
+
+<h3>8.1 Unified Intelligence Stack Architecture</h3>
+<p>LangGraph orchestrates agents with spec as central state.</p>
+
+<h3>8.2 The RAG Component (Future Extension)</h3>
+<p>RAG over style guide and past deliverables for consistency.</p>
+
+<h3>8.3 Observability Layer</h3>
+<p>Local logging of generation decisions, standards validation, and style corrections.</p>
+
+<h2>9. The Model Lifecycle</h2>
+<ul>
+  <li>Selection: Code-focused LLMs for accuracy</li>
+  <li>Prompt Management: Templates per deliverable type with style injection</li>
+  <li>Evaluation: Against enterprise spec-doc pairs</li>
+  <li>Improvement: Community contributions for new types/templates</li>
+</ul>
+
+<h2>10. Infrastructure</h2>
+
+<h3>10.1 Blueprint</h3>
+<ul>
+  <li>Local Docker with Ollama</li>
+</ul>
+
+<h3>10.2 Security</h3>
+<p>Zero network calls. All data local. Open code for audit.</p>
+
+<h3>10.3 Governance and Compliance</h3>
+<p>Configurable standards. Transparent traces. Style enforcement.</p>
+
+<h3>10.4 SRE</h3>
+<p>Local execution with error recovery. Index rebuild on demand.</p>
+
+<h2>11. Impact & Outcomes</h2>
+<p>Expected outcomes:</p>
+<ul>
+  <li>50–70% reduction in sprint rework</li>
+  <li>Tech writers elevated to spec architects</li>
+  <li>80% automation of documentation tasks</li>
+  <li>100% style guide adherence</li>
+  <li>Improved sprint velocity through early alignment</li>
+  <li>Foundation for sustainable DDD practices</li>
+</ul>
+
+<h2>The "We'll Get to This When We're Famous" Section</h2>
+<p>(A cheeky but honest roadmap of features we're deliberately not building in the MVP — because perfection is the enemy of shipped, and even AI can't fix scope creep overnight.)</p>
+<ul>
+  <li>Jira/Confluence/GitHub integration for automated handoff and sync</li>
+  <li>Team collaboration with real-time review comments</li>
+  <li>Custom deliverable templates beyond the core suite</li>
+  <li>Advanced analytics (doc gap analysis, search effectiveness)</li>
+  <li>Multi-user sessions and role-based access</li>
+  <li>Hosted enterprise version with audit logs and SSO</li>
+  <li>Plugin ecosystem for custom agents</li>
+  <li>AI-powered screenshot generation for guides</li>
+  <li>Voice-to-spec input for PMs</li>
+  <li>Direct export to Confluence/Notion</li>
+</ul>
+
+<h2>List of Diagrams & Images</h2>
+<div class="diagram-placeholder">
+  1. TOGAF ADM Cycle Adaptation for DDD (TOGAF convention: ADM circle diagram with DDD integration points)
+</div>
+
+<div class="diagram-placeholder">
+  2. SAFe Solution Train with DDD Enablers (SAFe convention: ART structure diagram with spec doc as shared artifact)
+</div>
+
+<div class="diagram-placeholder">
+  3. DDD Sprint Cycle Comparison (Agile convention: Flow diagram showing traditional vs DDD sprint)
+</div>
+
+<div class="diagram-placeholder">
+  4. Agent Orchestration Graph (LangGraph convention: Node-edge diagram of agents)
+</div>
+
+<div class="diagram-placeholder">
+  5. Deliverable Generation Matrix (Matrix table: Spec sections to deliverable types)
+</div>
+
+<div class="diagram-placeholder">
+  6. Sprint Time Reallocation Waterfall (Waterfall chart: Time savings in DDD sprint)
+</div>
+
+<div class="links">
+  <h2>Supporting Documentation</h2>
+  <ul>
+    <li><a href="SAMPLE_QUERIES.html">Sample Queries & Responses</a></li>
+    <li><a href="GUARDRAIL_RULES.html">Hallucination & Moderation Guardrails</a></li>
+    <li><a href="TECH_STACK.html">Technical Stack & Local Setup</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
