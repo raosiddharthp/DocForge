@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sample Queries & Responses – DocForge</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1 {
+      color: #0066FF;
+      font-size: 2.4em;
+      border-bottom: 4px solid #0066FF;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #0066FF;
+      font-size: 1.8em;
+      margin-top: 3em;
+      border-bottom: 2px solid #0066FF;
+      padding-bottom: 8px;
+    }
+
+    .query {
+      background: #f8f8f8;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+      border-left: 5px solid #0066FF;
+    }
+
+    .user {
+      font-weight: 700;
+      color: #0066FF;
+    }
+
+    .citation {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .back {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 2px solid #0066FF;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Sample Queries & Responses</h1>
+
+<p>These examples show how DocForge handles different types of queries based on uploaded specification documents. Responses include source citations and demonstrate guardrail behavior.</p>
+
+<div class="query">
+  <p class="user">User: Generate code for the user authentication API described in the spec.</p>
+  <p><strong>Agent:</strong> Here's the Python Flask implementation for the authentication endpoints as specified:</p>
+  <pre><code>@app.route('/api/v1/auth/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    if not data or 'email' not in data or 'password' not in data:
+        return jsonify({"error": "Missing email or password"}), 400
+    # ... (full implementation with JWT token generation)</code></pre>
+  <p class="citation">Source: Authentication API Specification v1.2 – Section 3.1 "Login Endpoint" (pages 5–7)</p>
+</div>
+
+<div class="query">
+  <p class="user">User: Create a how-to guide for setting up two-factor authentication.</p>
+  <p><strong>Agent:</strong> ### How to Enable Two-Factor Authentication</p>
+  <p>1. Log in to your account dashboard.<br>
+  2. Navigate to Settings → Security.<br>
+  3. Click "Enable 2FA" and scan the QR code with your authenticator app.<br>
+  4. Enter the 6-digit code to verify.</p>
+  <p class="citation">Source: Security Features Specification – Section 4.2 "Two-Factor Authentication Setup"</p>
+</div>
+
+<div class="query">
+  <p class="user">User: What is the current weather in Tokyo?</p>
+  <p><strong>Agent:</strong> I can only answer questions based on the documents you have uploaded. I don't have access to external or real-time information. Please ask about your product specifications or uploaded knowledge base.</p>
+  <p class="citation">Guardrail triggered: Query outside document scope</p>
+</div>
+
+<div class="query">
+  <p class="user">User: Generate release notes for version 2.3.0 based on the change log spec.</p>
+  <p><strong>Agent:</strong> ## Release Notes – Version 2.3.0 (2026-01-15)</p>
+  <p><strong>New Features</strong><br>
+  • Multi-factor authentication support<br>
+  • Dark mode toggle in user preferences<br>
+  • API rate limiting with customizable thresholds</p>
+  <p><strong>Improvements</strong><br>
+  • Reduced login latency by 40%<br>
+  • Enhanced error messaging for failed authentications</p>
+  <p class="citation">Source: Release 2.3.0 Change Specification – All sections</p>
+</div>
+
+<div class="back">
+  <a href="index.html">← Back to Main Design</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Technical Stack & Local Setup – DocForge</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1 {
+      color: #0066FF;
+      font-size: 2.4em;
+      border-bottom: 4px solid #0066FF;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #0066FF;
+      font-size: 1.8em;
+      margin-top: 3em;
+      border-bottom: 2px solid #0066FF;
+      padding-bottom: 8px;
+    }
+
+    pre {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+    }
+
+    .back {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 2px solid #0066FF;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Technical Stack & Local Setup</h1>
+
+<h2>Core Technology Stack</h2>
+
+<ul>
+  <li><strong>Orchestration</strong>: LangGraph (stateful multi-agent workflow)</li>
+  <li><strong>LLM Backend</strong>: Ollama (local execution of open-source models)</li>
+  <li><strong>Default Model</strong>: DeepSeek-Coder or Qwen2.5-Coder (code-focused)</li>
+  <li><strong>RAG Framework</strong>: LlamaIndex (document indexing and retrieval)</li>
+  <li><strong>Vector Store</strong>: Chroma (local persistent embeddings)</li>
+  <li><strong>Frontend</strong>: Streamlit (interactive dashboard with upload and generation)</li>
+  <li><strong>Style Enforcement</strong>: Custom StyleEnforcer agent with uploaded guide</li>
+</ul>
+
+<h2>Local Installation Guide</h2>
+
+<pre>
+# 1. Install Ollama (macOS/Linux/Windows)
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. Pull recommended model
+ollama pull deepseek-coder:6.7b   # or qwen2.5-coder:7b
+
+# 3. Clone the repo
+git clone https://github.com/raosiddharthp/DocForge.git
+cd DocForge
+
+# 4. Install Python dependencies
+pip install -r requirements.txt
+
+# 5. Run the app
+streamlit run app.py
+</pre>
+
+<h2>Supported Input Formats</h2>
+
+<ul>
+  <li>Markdown (.md) – preferred</li>
+  <li>PDF (.pdf)</li>
+  <li>Plain text (.txt)</li>
+  <li>Future: Google Docs export, Confluence pages</li>
+</ul>
+
+<h2>System Requirements</h2>
+
+<ul>
+  <li>8GB RAM minimum (16GB recommended for larger specs)</li>
+  <li>10GB disk space (models + indexes)</li>
+  <li>macOS, Linux, or Windows (WSL2)</li>
+</ul>
+
+<h2>Privacy & Security</h2>
+
+<ul>
+  <li>No internet connection required after model download</li>
+  <li>All data stays on your device</li>
+  <li>Open-source code for review and customization</li>
+  <li>No telemetry or logging by default</li>
+</ul>
+
+<div class="back">
+  <a href="index.html">← Back to Main Design</a>
+</div>
+
+</body>
+</html>

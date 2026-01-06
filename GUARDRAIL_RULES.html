@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Guardrail Rules Engine – DocForge</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1 {
+      color: #0066FF;
+      font-size: 2.4em;
+      border-bottom: 4px solid #0066FF;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #0066FF;
+      font-size: 1.8em;
+      margin-top: 3em;
+      border-bottom: 2px solid #0066FF;
+      padding-bottom: 8px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f8ff;
+      color: #0066FF;
+      font-weight: 700;
+    }
+
+    .back {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 2px solid #0066FF;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Guardrail Rules Engine</h1>
+
+<p>DocForge includes multiple guardrail layers to ensure generated outputs are accurate, appropriate, and strictly grounded in uploaded specifications. These rules prevent hallucinations, off-topic responses, and style deviations.</p>
+
+<h2>Guardrail Layers</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layer</th>
+      <th>Purpose</th>
+      <th>Mechanism</th>
+      <th>Response When Triggered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Document Scope Guard</td>
+      <td>Prevents answers outside uploaded specs</td>
+      <td>Pre-generation check for external knowledge requests</td>
+      <td>"I can only answer based on uploaded specifications"</td>
+    </tr>
+    <tr>
+      <td>Minimum Standard Validation</td>
+      <td>Ensures sufficient input quality/quantity</td>
+      <td>Configurable thresholds (e.g., required sections present)</td>
+      <td>Grays out unavailable deliverables with explanation</td>
+    </tr>
+    <tr>
+      <td>Style Guide Enforcement</td>
+      <td>100% adherence to uploaded style guide</td>
+      <td>Post-generation auto-correction agent</td>
+      <td>Automatically fixes grammar, terminology, structure</td>
+    </tr>
+    <tr>
+      <td>Hallucination Detection</td>
+      <td>Catches ungrounded claims</td>
+      <td>Self-checking prompt + confidence scoring</td>
+      <td>Re-generates or refuses with explanation</td>
+    </tr>
+    <tr>
+      <td>Citation Enforcement</td>
+      <td>Ensures traceability</td>
+      <td>Post-generation validation</td>
+      <td>Forces inclusion of source references</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Style Guide Enforcement Flow</h2>
+<ol>
+  <li>User uploads style guide (one-time, changeable)</li>
+  <li>Agent indexes style rules (grammar, terminology, structure)</li>
+  <li>After generation, StyleEnforcer agent reviews output</li>
+  <li>Auto-corrects deviations (no human in loop)</li>
+  <li>Writer receives 100% compliant draft for final refinement</li>
+</ol>
+
+<div class="back">
+  <a href="index.html">← Back to Main Design</a>
+</div>
+
+</body>
+</html>
