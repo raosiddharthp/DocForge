@@ -1,279 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocForge — Agentic Documentation Architecture</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>DocForge – Document-Driven Code Assistant</title>
+  <meta name="description" content="Open-source, local-first multi-agent system for Document-Driven Development – turning specs into code, docs, and test criteria while empowering tech writers and product teams">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    h1 {
+      color: #0066FF;
+      font-size: 2.4em;
+      border-bottom: 4px solid #0066FF;
+      padding-bottom: 15px;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #0066FF;
+      font-size: 1.8em;
+      margin-top: 3em;
+      border-bottom: 2px solid #0066FF;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #0066FF;
+      font-size: 1.4em;
+      margin-top: 2.5em;
+    }
+
+    p, ul, ol, li {
+      margin-bottom: 1.2em;
+    }
+
+    ul, ol {
+      padding-left: 2em;
+    }
+
+    a {
+      color: #0066FF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f8ff;
+      color: #0066FF;
+      font-weight: 700;
+    }
+
+    .diagram-placeholder {
+      background: #f0f8ff;
+      border: 2px dashed #0066FF;
+      padding: 40px;
+      text-align: center;
+      margin: 40px 0;
+      color: #0066FF;
+      font-style: italic;
+    }
+
+    .links {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 2px solid #0066FF;
+    }
+  </style>
 </head>
+<body>
 
-<body class="project-page">
+<h1>DocForge – Document-Driven Code Assistant</h1>
 
-    <!-- Removed Autonomous Enterprise navigation entirely -->
+<h2>1. Description</h2>
+<p>DocForge is an open-source, local-first multi-agent system that enables <strong>Document-Driven Development (DDD)</strong> — a spec-first paradigm where detailed product documentation serves as the primary source of truth for development. The workflow begins with a clear handoff: Product Managers author user stories, definition of done, acceptance criteria, and feature impacts. These are handed off to Technical Writers, who own and author all product documentation for the release. DocForge ingests the writer's documents, validates them against configurable minimum standards (quality, quantity, variety), and generates a suite of deliverables including user guides, API docs, release notes, how-to articles, admin guides, and more. It also generates code skeletons and test criteria from approved specs, reviews code for compliance, and suggests updates when specs change. Built with LangGraph orchestration and open-source LLMs via Ollama, DocForge runs entirely offline for maximum privacy.</p>
 
-    <div class="main-content">
+<h2>2. Executive Summary</h2>
+<p>DocForge transforms agile delivery by making documentation the strategic driver of development, while fully respecting the Agile Manifesto's principle of "working software over comprehensive documentation." It achieves this by using AI to automate the heavy lift of doc-code syncing, allowing teams to deliver working software faster through spec-first collaboration. PMs provide structured inputs; writers own authorship and quality; AI handles generation and maintenance. The system enforces configurable minimum standards for ingested docs, grays out unavailable deliverables with clear feedback, and allows writers to select/deselect outputs. All outputs adhere 100% to a user-uploaded style guide (e.g., Microsoft, Chicago, or custom) via automated agent enforcement. Configurable output formats (Jupyter, PDF, Markdown, HTML) ensure flexibility. Local-first execution addresses DevSecOps concerns with zero data leakage, making it ideal for enterprises. For tech writers, it eliminates grammar/style reviewers by automating adherence, freeing them to focus on craft. While ideal for teams that value collaboration, it acknowledges real-world demarcations — PMs hand off, writers author completely, and teams review/approve before cascading to devs/QA.</p>
 
-        <!-- ========================= -->
-        <!-- HERO -->
-        <!-- ========================= -->
-        <h1>
-            DocForge — Agentic Documentation Orchestration System<br>
-            <small>Documentation as a Byproduct of Engineering Activity</small>
-        </h1>
+<h2>3. Business Strategy</h2>
 
-        <p class="project-description">
-            DocForge is an open-source, agentic documentation orchestration system that treats documentation as
-            a <strong>byproduct of engineering work</strong>, not a parallel workflow.
-            <br><br>
-            Instead of asking humans to keep architecture, decisions, and design documents in sync,
-            DocForge observes engineering activity, captures intent, and produces structured,
-            auditable documentation artifacts automatically.
-            <br><br>
-            The system optimizes for <strong>traceability, reversibility, and architectural integrity</strong>
-            rather than completeness or polish.
-        </p>
+<h3>3.1 Strategic Value Proposition</h3>
+<p>DocForge reduces sprint rework by 50–70% by catching requirement-code drift early, eliminates manual documentation busywork, and elevates technical writers to spec architects. It respects agile by starting with "just-enough" docs (PM handoff), then generating comprehensive outputs after minimum standards are met. The 12 deliverable categories (from user guides to compliance docs) are generated/updated in one click, with writers owning authorship. This changes the cycle from "docs later" to "specs first, automation throughout," delivering working software faster while valuing collaboration. To address agile skeptics who prefer "working software over comprehensive documentation," DocForge pitches as "working software through intelligent documentation" — automating non-essential tasks later in the cycle, but enabling earlier alignment to avoid waste.</p>
 
-        <!-- ========================= -->
-        <!-- ARCHITECTURAL THESIS -->
-        <!-- ========================= -->
-        <div class="section">
-            <h3>Architectural Thesis</h3>
+<h3>3.2 Regulatory Strategy</h3>
+<p>All processing occurs locally with no external network calls. Document uploads remain on-device. Style guide and spec data never leave the machine. Open-source code enables security audits. Configurable standards support compliance-level documentation requirements. Outputs include governance/compliance deliverables like versioning policies and content audits.</p>
 
-            <table style="width:100%; border-collapse: collapse; font-size: 0.95em;">
-                <tbody>
-                    <tr>
-                        <td style="padding:12px; border:1px solid #ddd; font-weight:bold; width:30%;">
-                            Core Problem
-                        </td>
-                        <td style="padding:12px; border:1px solid #ddd;">
-                            Documentation decays faster than systems evolve, creating architectural drift,
-                            audit risk, and decision amnesia.
-                        </td>
-                    </tr>
-                    <tr style="background:#f8f9fa;">
-                        <td style="padding:12px; border:1px solid #ddd; font-weight:bold;">
-                            Why Existing Approaches Fail
-                        </td>
-                        <td style="padding:12px; border:1px solid #ddd;">
-                            Wikis, static docs, and diagrams depend on voluntary human upkeep,
-                            making them fragile, stale, and untrusted.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:12px; border:1px solid #ddd; font-weight:bold;">
-                            Non-Obvious Insight
-                        </td>
-                        <td style="padding:12px; border:1px solid #ddd;">
-                            Engineering activity already contains all necessary signals.
-                            The failure is not missing data — it is missing orchestration.
-                        </td>
-                    </tr>
-                    <tr style="background:#f8f9fa;">
-                        <td style="padding:12px; border:1px solid #ddd; font-weight:bold;">
-                            Constraints
-                        </td>
-                        <td style="padding:12px; border:1px solid #ddd;">
-                            Open-source only. No vendor lock-in. Human override always possible.
-                            Documentation must be reproducible and falsifiable.
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<h2>4. Users</h2>
 
-        <!-- ========================= -->
-        <!-- SYSTEM ARCHITECTURE -->
-        <!-- ========================= -->
-        <section>
+<h3>4.1 Target User Personas</h3>
+<ul>
+  <li><strong>Product Manager</strong>: Authors user stories, DoD, AC, feature impacts; hands off to writer; reviews/approves drafts.</li>
+  <li><strong>Technical Writer</strong>: Receives PM handoff; owns and authors all docs; uses DocForge to generate suite; refines outputs.</li>
+  <li><strong>Developer</strong>: Receives approved drafts with code skeletons; implements with compliance feedback.</li>
+  <li><strong>QA Engineer</strong>: Receives test criteria from approved specs.</li>
+</ul>
 
-            <h3>System Architecture & Trade-offs</h3>
+<h3>4.2 Lightweight Requirements and User Stories</h3>
+<p>As a PM, I want to hand off structured specs to writers, so they own quality.</p>
+<p>As a writer, I want to generate a configurable suite of docs from ingested specs, with unavailable types grayed out and explained.</p>
+<p>As a writer, I want all outputs to adhere 100% to my uploaded style guide automatically.</p>
+<p>As a writer, I want to select/deselect deliverables and configure output formats.</p>
+<p>As a team, I want approved drafts to cascade to devs/QA with code/test suggestions.</p>
 
-            <details>
-                <summary><strong>A. System Context & Boundaries</strong></summary>
-                <div style="padding:30px; text-align:center;">
-                    <h4>System Context Diagram</h4>
-                    <img src="diagrams/system-context.png"
-                         alt="System Context Diagram"
-                         style="width:100%; max-width:1000px;">
-                    <p><em>
-                        DocForge operates as an observational layer across engineering systems,
-                        without becoming a system of record.
-                    </em></p>
-                </div>
-            </details>
+<h3>4.3 User Journey Map</h3>
+<ol>
+  <li>PM authors user stories/DoD/AC → hands off to writer.</li>
+  <li>Writer uploads style guide (one-time) and release specs.</li>
+  <li>DocForge validates against minimum standards → grays out unavailable deliverables with explanation.</li>
+  <li>Writer selects desired outputs and formats → generates suite.</li>
+  <li>Writer refines AI outputs → marks drafts ready for review.</li>
+  <li>PM/Dev/QA review/approve → approved drafts cascade (code skeletons, test criteria).</li>
+  <li>Writer exports final deliverables.</li>
+</ol>
 
-            <details>
-                <summary><strong>B. Capability Decomposition</strong></summary>
-                <div style="padding:30px; text-align:center;">
-                    <h4>Level-1 Capability Map</h4>
-                    <img src="diagrams/capability-map-l1.png"
-                         alt="L1 Capability Map"
-                         style="width:100%; max-width:1000px;">
-                    <p><em>
-                        Capabilities focus on capture, synthesis, validation, and governance —
-                        not document authoring.
-                    </em></p>
-                </div>
-            </details>
+<h2>5. Design and Architecture</h2>
 
-            <details>
-                <summary><strong>C. Logical Architecture</strong></summary>
-                <div style="padding:30px; text-align:center;">
-                    <h4>Logical Component Architecture</h4>
-                    <img src="diagrams/logical-architecture.png"
-                         alt="Logical Architecture Diagram"
-                         style="width:100%; max-width:1000px;">
-                    <p><em>
-                        Logical separation enforces trust boundaries between observation,
-                        reasoning, and artifact generation.
-                    </em></p>
-                </div>
-            </details>
+<h3>5.1 Phase A: Vision</h3>
+<p>Enable Document-Driven Development by making specifications the central, living artifact that AI uses to generate, validate, and maintain code and comprehensive documentation suites, respecting agile handoffs and minimum standards.</p>
 
-        </section>
+<h3>5.2 Phase B: Business</h3>
+<p>Core capabilities: spec ingestion with minimum standard validation, style guide enforcement, selective multi-deliverable generation, compliance review, change impact analysis. Success metrics: rework reduction, documentation completion rate, style adherence score, sprint velocity improvement.</p>
 
-        <!-- ========================= -->
-        <!-- AGENTIC SYSTEM DESIGN -->
-        <!-- ========================= -->
-        <section>
+<h3>5.3 Phase C: Information</h3>
+<p>Primary inputs: PM handoff docs + writer-owned specs + style guide. State tracks versions, approval status, generated outputs. Local persistence in JSON.</p>
 
-            <h3>Agentic System Design</h3>
+<h3>5.4 Phase D: Technology</h3>
+<ul>
+  <li>App: Streamlit dashboard for writer view (ingest, standards config, style upload, selection, generation)</li>
+  <li>Agent: LangGraph agents (SpecValidator, StyleEnforcer, DeliverableGenerator with sub-specializations, ComplianceChecker, ChangeAnalyzer)</li>
+  <li>Platform: LlamaIndex for doc indexing/retrieval</li>
+  <li>Model: Ollama with code-focused LLMs (DeepSeek-Coder default)</li>
+  <li>Infrastructure: Local Docker with no external dependencies</li>
+</ul>
 
-            <p>
-                DocForge is implemented as a <strong>cooperating multi-agent system</strong>.
-                Agents reason independently, validate each other’s outputs,
-                and escalate uncertainty rather than hiding it.
-            </p>
+<h2>6. Rollout and Roadmap - Implementation Phases and PI Mapping</h2>
 
-            <details>
-                <summary><strong>A. Agent Roles & Responsibilities</strong></summary>
-                <div style="padding:30px; text-align:center;">
-                    <h4>Agent Responsibility Matrix</h4>
-                    <img src="diagrams/agent-responsibility-map.png"
-                         alt="Agent Responsibility Map"
-                         style="width:100%; max-width:1000px;">
-                </div>
-            </details>
+<h3>6.1 Current State</h3>
+<p>MVP with spec ingestion, minimum standard validation, style guide enforcement, selective generation of core deliverables, compliance review.</p>
 
-            <details>
-                <summary><strong>B. Trust Boundaries & Failure Modes</strong></summary>
-                <div style="padding:30px; text-align:center;">
-                    <h4>Agent Trust Boundary Diagram</h4>
-                    <img src="diagrams/agent-trust-boundaries.png"
-                         alt="Agent Trust Boundaries"
-                         style="width:100%; max-width:1000px;">
-                    <p><em>
-                        No agent is allowed to both generate and approve the same architectural fact.
-                    </em></p>
-                </div>
-            </details>
+<h3>6.2 Future State</h3>
+<ul>
+  <li>Jira integration for automated handoff</li>
+  <li>Team review workflow with comments</li>
+  <li>Custom deliverable templates</li>
+  <li>Multi-user collaboration</li>
+</ul>
 
-        </section>
+<h3>6.3 Agile Delivery - ART</h3>
+<p>PI-1: Spec ingestion, standards validator, style enforcer  
+PI-2: Deliverable generator for core types  
+PI-3: Compliance checker and change analyzer  
+PI-4: Approval workflow and cascade exports  
+PI-5: Output format configuration and polish</p>
 
-        <!-- ========================= -->
-        <!-- USERS & ANTI-USERS -->
-        <!-- ========================= -->
-        <section>
+<h3>6.4 Change Management</h3>
+<p>Open-source with contribution guidelines for new deliverable types. Configurable standards for team adaptation.</p>
 
-            <h3>Target Users & Failure-Driven Personas</h3>
+<h3>6.5 Target Value Stream</h3>
+<p>PM handoff → Writer ingestion & generation → Team review/approval → Cascade to dev/QA → Sync on changes → Release</p>
 
-            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;">
+<h2>7. Multi-Agent Model</h2>
 
-                <div style="border:1px solid #ddd; padding:20px;">
-                    <h4>Enterprise Architect</h4>
-                    <p>
-                        Needs traceable decisions, not diagrams for their own sake.
-                    </p>
-                </div>
+<h3>7.1 Agent Personas</h3>
+<ul>
+  <li>SpecValidator Agent: Checks minimum standards, grays out unavailable deliverables</li>
+  <li>StyleEnforcer Agent: Applies uploaded style guide automatically (100% adherence)</li>
+  <li>DeliverableGenerator Agent: Specialized sub-agents for each type (e.g., ApiDocsAgent, ReleaseNotesAgent)</li>
+  <li>ComplianceChecker Agent: Verifies code vs approved spec</li>
+  <li>ChangeAnalyzer Agent: Detects spec/code diffs and suggests updates</li>
+</ul>
 
-                <div style="border:1px solid #ddd; padding:20px;">
-                    <h4>Staff Engineer</h4>
-                    <p>
-                        Wants documentation without context switching or ceremony.
-                    </p>
-                </div>
+<h3>7.2 Reasoning Trace</h3>
+<p>Full trace showing how spec sections map to outputs and style rules applied.</p>
 
-                <div style="border:1px solid #ddd; padding:20px;">
-                    <h4>Platform Owner</h4>
-                    <p>
-                        Needs confidence that systems are explainable and governable.
-                    </p>
-                </div>
+<h3>7.3 Decision Matrix and Conflict Resolution</h3>
+<p>Standards validator scores input adequacy. StyleEnforcer auto-corrects deviations. Conflicts prioritized by approval status (approved spec wins).</p>
 
-            </div>
+<h2>8. Intelligence Platform</h2>
 
-            <h4 style="margin-top:30px;">Anti-Personas</h4>
-            <ul>
-                <li>Teams seeking marketing documentation</li>
-                <li>Organizations expecting zero human oversight</li>
-                <li>Environments without architectural ownership</li>
-            </ul>
+<h3>8.1 Unified Intelligence Stack Architecture</h3>
+<p>LangGraph orchestrates agents with spec as central state.</p>
 
-        </section>
+<h3>8.2 The RAG Component (Future Extension)</h3>
+<p>RAG over style guide and past deliverables for consistency.</p>
 
-        <!-- ========================= -->
-        <!-- GOVERNANCE & ADRs -->
-        <!-- ========================= -->
-        <section>
+<h3>8.3 Observability Layer</h3>
+<p>Local logging of generation decisions, standards validation, and style corrections.</p>
 
-            <h3>Architecture Decision Records (First-Class)</h3>
+<h2>9. The Model Lifecycle</h2>
+<ul>
+  <li>Selection: Code-focused LLMs for accuracy</li>
+  <li>Prompt Management: Templates per deliverable type with style injection</li>
+  <li>Evaluation: Against enterprise spec-doc pairs</li>
+  <li>Improvement: Community contributions for new types/templates</li>
+</ul>
 
-            <p>
-                Every non-trivial architectural output is backed by an ADR.
-                Documentation without decision lineage is treated as untrusted.
-            </p>
+<h2>10. Infrastructure</h2>
 
-            <img src="diagrams/adr-lifecycle.png"
-                 alt="ADR Lifecycle"
-                 style="width:100%; max-width:900px;">
+<h3>10.1 Blueprint</h3>
+<ul>
+  <li>Local Docker with Ollama</li>
+</ul>
 
-        </section>
+<h3>10.2 Security</h3>
+<p>Zero network calls. All data local. Open code for audit.</p>
 
-        <!-- ========================= -->
-        <!-- FAILURE & DEFERRED DECISIONS -->
-        <!-- ========================= -->
-        <section>
+<h3>10.3 Governance and Compliance</h3>
+<p>Configurable standards. Transparent traces. Style enforcement.</p>
 
-            <h3>Failure Modes & Explicitly Deferred Decisions</h3>
+<h3>10.4 SRE</h3>
+<p>Local execution with error recovery. Index rebuild on demand.</p>
 
-            <table style="width:100%; border-collapse: collapse; font-size:0.95em;">
-                <thead>
-                    <tr style="background:#f2f6ff;">
-                        <th style="padding:12px; border:1px solid #ddd;">Area</th>
-                        <th style="padding:12px; border:1px solid #ddd;">Decision</th>
-                        <th style="padding:12px; border:1px solid #ddd;">Reason</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #ddd;">Real-time generation</td>
-                        <td style="padding:10px; border:1px solid #ddd;">Deferred</td>
-                        <td style="padding:10px; border:1px solid #ddd;">Prioritizing correctness over immediacy</td>
-                    </tr>
-                    <tr style="background:#f8f9fa;">
-                        <td style="padding:10px; border:1px solid #ddd;">Full autonomy</td>
-                        <td style="padding:10px; border:1px solid #ddd;">Explicitly rejected</td>
-                        <td style="padding:10px; border:1px solid #ddd;">Human accountability is non-negotiable</td>
-                    </tr>
-                </tbody>
-            </table>
+<h2>11. Impact & Outcomes</h2>
+<p>Expected outcomes:</p>
+<ul>
+  <li>50–70% reduction in sprint rework</li>
+  <li>Tech writers elevated to spec architects</li>
+  <li>80% automation of documentation tasks</li>
+  <li>100% style guide adherence</li>
+  <li>Improved sprint velocity through early alignment</li>
+  <li>Foundation for sustainable DDD practices</li>
+</ul>
 
-        </section>
+<h2>The "We'll Get to This When We're Famous" Section</h2>
+<p>(A cheeky but honest roadmap of features we're deliberately not building in the MVP — because perfection is the enemy of shipped, and even AI can't fix scope creep overnight.)</p>
+<ul>
+  <li>Jira/Confluence/GitHub integration for automated handoff and sync</li>
+  <li>Team collaboration with real-time review comments</li>
+  <li>Custom deliverable templates beyond the core suite</li>
+  <li>Advanced analytics (doc gap analysis, search effectiveness)</li>
+  <li>Multi-user sessions and role-based access</li>
+  <li>Hosted enterprise version with audit logs and SSO</li>
+  <li>Plugin ecosystem for custom agents</li>
+  <li>AI-powered screenshot generation for guides</li>
+  <li>Voice-to-spec input for PMs</li>
+  <li>Direct export to Confluence/Notion</li>
+</ul>
 
-        <!-- ========================= -->
-        <!-- CLOSING -->
-        <!-- ========================= -->
-        <div style="background:#f8f9fa; padding:25px; border-left:5px solid #0052cc;">
-            <h4>Success Criteria</h4>
-            <p>
-                DocForge succeeds if engineers stop asking,
-                “Is this documentation still accurate?”
-                and start asking,
-                “What decision does this represent?”
-            </p>
-        </div>
+<h2>List of Diagrams & Images</h2>
+<div class="diagram-placeholder">
+  1. TOGAF ADM Cycle Adaptation for DDD (TOGAF convention: ADM circle diagram with DDD integration points)
+</div>
 
-    </div>
+<div class="diagram-placeholder">
+  2. SAFe Solution Train with DDD Enablers (SAFe convention: ART structure diagram with spec doc as shared artifact)
+</div>
 
+<div class="diagram-placeholder">
+  3. DDD Sprint Cycle Comparison (Agile convention: Flow diagram showing traditional vs DDD sprint)
+</div>
+
+<div class="diagram-placeholder">
+  4. Agent Orchestration Graph (LangGraph convention: Node-edge diagram of agents)
+</div>
+
+<div class="diagram-placeholder">
+  5. Deliverable Generation Matrix (Matrix table: Spec sections to deliverable types)
+</div>
+
+<div class="diagram-placeholder">
+  6. Sprint Time Reallocation Waterfall (Waterfall chart: Time savings in DDD sprint)
+</div>
+
+<div class="links">
+    <h2>Supporting Documentation</h2>
+    <ul>
+      <li><a href="SAMPLE_QUERIES.html">Sample Queries & Responses</a></li>
+      <li><a href="GUARDRAIL_RULES.html">Guardrail Rules Engine</a></li>
+      <li><a href="TECH_STACK.html">Technical Stack & Local Setup</a></li>
+    </ul>
+  </div>
 </body>
 </html>
