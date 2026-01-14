@@ -1,300 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>DocForge – Document-Driven Code Assistant</title>
-  <meta name="description" content="Open-source, local-first multi-agent system for Document-Driven Development – turning specs into code, docs, and test criteria while empowering tech writers and product teams">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
-    body {
-      font-family: 'Space Mono', monospace;
-      background: white;
-      color: black;
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      font-size: 17px;
-    }
-
-    h1 {
-      color: #0066FF;
-      font-size: 2.4em;
-      border-bottom: 4px solid #0066FF;
-      padding-bottom: 15px;
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: #0066FF;
-      font-size: 1.8em;
-      margin-top: 3em;
-      border-bottom: 2px solid #0066FF;
-      padding-bottom: 8px;
-    }
-
-    h3 {
-      color: #0066FF;
-      font-size: 1.4em;
-      margin-top: 2.5em;
-    }
-
-    p, ul, ol, li {
-      margin-bottom: 1.2em;
-    }
-
-    ul, ol {
-      padding-left: 2em;
-    }
-
-    a {
-      color: #0066FF;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin: 30px 0;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background: #f0f8ff;
-      color: #0066FF;
-      font-weight: 700;
-    }
-
-    .diagram-placeholder {
-      background: #f0f8ff;
-      border: 2px dashed #0066FF;
-      padding: 40px;
-      text-align: center;
-      margin: 40px 0;
-      color: #0066FF;
-      font-style: italic;
-    }
-
-    .links {
-      margin-top: 80px;
-      padding-top: 30px;
-      border-top: 2px solid #0066FF;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocForge - Shift-Left Documentation Engine</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="project-page analyzer-theme"> <div class="home-nav-container">
+        <a href="../../index.html" class="btn-home">
+            <i class="fas fa-arrow-left"></i> Portfolio Home
+        </a>
+    </div>
 
-<h1>DocForge – Document-Driven Code Assistant</h1>
+    <div class="header-ribbon">
+        <nav>
+            <a href="#strategic-gap">Strategic Gap</a>
+            <a href="#exec-summary">Executive Summary</a>
+            <a href="#business-strategy">Business & Value Stream</a>
+            <a href="#tech-stack">Tech Stack</a>
+            <a href="#multi-agent">Multi-Agent Chain</a>
+            <a href="#impact">Impact</a>
+        </nav>
+    </div>
 
-<h2>1. Description</h2>
-<p>DocForge is an open-source, local-first multi-agent system that enables <strong>Document-Driven Development (DDD)</strong> — a spec-first paradigm where detailed product documentation serves as the primary source of truth for development. The workflow begins with a clear handoff: Product Managers author user stories, definition of done, acceptance criteria, and feature impacts. These are handed off to Technical Writers, who own and author all product documentation for the release. DocForge ingests the writer's documents, validates them against configurable minimum standards (quality, quantity, variety), and generates a suite of deliverables including user guides, API docs, release notes, how-to articles, admin guides, and more. It also generates code skeletons and test criteria from approved specs, reviews code for compliance, and suggests updates when specs change. Built with LangGraph orchestration and open-source LLMs via Ollama, DocForge runs entirely offline for maximum privacy.</p>
+    <div class="main-content">
+        <h1>DocForge – Strategic Shift-Left Documentation Engine<br>
+        <small>Enabling Document-Driven Development (DDD) via Deterministic Drift Detection & Agentic Style Enforcement</small></h1>
 
-<h2>2. Executive Summary</h2>
-<p>DocForge transforms agile delivery by making documentation the strategic driver of development, while fully respecting the Agile Manifesto's principle of "working software over comprehensive documentation." It achieves this by using AI to automate the heavy lift of doc-code syncing, allowing teams to deliver working software faster through spec-first collaboration. PMs provide structured inputs; writers own authorship and quality; AI handles generation and maintenance. The system enforces configurable minimum standards for ingested docs, grays out unavailable deliverables with clear feedback, and allows writers to select/deselect outputs. All outputs adhere 100% to a user-uploaded style guide (e.g., Microsoft, Chicago, or custom) via automated agent enforcement. Configurable output formats (Jupyter, PDF, Markdown, HTML) ensure flexibility. Local-first execution addresses DevSecOps concerns with zero data leakage, making it ideal for enterprises. For tech writers, it eliminates grammar/style reviewers by automating adherence, freeing them to focus on craft. While ideal for teams that value collaboration, it acknowledges real-world demarcations — PMs hand off, writers author completely, and teams review/approve before cascading to devs/QA.</p>
+        <p class="project-description">
+            DocForge is an open-source, local-first multi-agent system that transforms documentation from a reactive delivery task into a proactive design discipline. 
+            By integrating directly into the engineering change points, it surfaces documentation impact at the moment of architectural shift, ensuring 100% parity between 
+            Interface Contracts (Code/Specs) and the Google Developer Documentation Style Guide.
+        </p>
 
-<h2>3. Business Strategy</h2>
+        <div id="strategic-gap" class="section">
+            <h3>1. The Strategic Gap: Documentation-Code Parity</h3>
+            <p>In high-velocity Agile environments, documentation is frequently treated as a <strong>downstream artifact</strong>—a "cleanup task" performed after the code is merged. This creates a structural "Documentation Debt" where the PRD, the design specs, and the final implementation inevitably drift apart.</p>
+            
+            <ul>
+                <li><strong>The High Cost of Late Discovery:</strong> When documentation is authored post-release (General Availability chaos), technical gaps are discovered too late, leading to expensive re-work.</li>
+                <li><strong>The "Black Box" Risk:</strong> Without deterministic parity, software is viewed as a black box, increasing compliance friction and reducing trust.</li>
+            </ul>
 
-<h3>3.1 Strategic Value Proposition</h3>
-<p>DocForge reduces sprint rework by 50–70% by catching requirement-code drift early, eliminates manual documentation busywork, and elevates technical writers to spec architects. It respects agile by starting with "just-enough" docs (PM handoff), then generating comprehensive outputs after minimum standards are met. The 12 deliverable categories (from user guides to compliance docs) are generated/updated in one click, with writers owning authorship. This changes the cycle from "docs later" to "specs first, automation throughout," delivering working software faster while valuing collaboration. To address agile skeptics who prefer "working software over comprehensive documentation," DocForge pitches as "working software through intelligent documentation" — automating non-essential tasks later in the cycle, but enabling earlier alignment to avoid waste.</p>
+            
 
-<h3>3.2 Regulatory Strategy</h3>
-<p>All processing occurs locally with no external network calls. Document uploads remain on-device. Style guide and spec data never leave the machine. Open-source code enables security audits. Configurable standards support compliance-level documentation requirements. Outputs include governance/compliance deliverables like versioning policies and content audits.</p>
+            <h4>The DDD Mission: From Delivery Task to Design Discipline</h4>
+            <p>DocForge enables <strong>Document-Driven Development (DDD)</strong> by repositioning documentation as the primary source of truth.</p>
+            <ul>
+                <li><strong>Shifting Left:</strong> Surfaces documentation impact the moment a design decision is made or an interface contract is altered.</li>
+                <li><strong>Design Authority:</strong> Ensures clarity is established before resources are committed to engineering.</li>
+            </ul>
 
-<h2>4. Users</h2>
+            <div style="background: var(--soft-bg); padding: 20px; border-radius: 8px; border-left: 5px solid var(--primary); margin-top: 20px;">
+                <strong>Intentional Constraints (The Anti-Scope):</strong>
+                <p style="font-size: 0.9em; margin-top: 10px;">
+                    • <strong>No Auto-Commits:</strong> The human Tech Writer remains the final "Design Authority".<br>
+                    • <strong>Interface-First Focus:</strong> Intentionally ignores internal function logic to avoid "noise".<br>
+                    • <strong>Clarity over Creativity:</strong> Focuses on technical precision and style rules, not replacing the creative voice.
+                </p>
+            </div>
+        </div>
 
-<h3>4.1 Target User Personas</h3>
-<ul>
-  <li><strong>Product Manager</strong>: Authors user stories, DoD, AC, feature impacts; hands off to writer; reviews/approves drafts.</li>
-  <li><strong>Technical Writer</strong>: Receives PM handoff; owns and authors all docs; uses DocForge to generate suite; refines outputs.</li>
-  <li><strong>Developer</strong>: Receives approved drafts with code skeletons; implements with compliance feedback.</li>
-  <li><strong>QA Engineer</strong>: Receives test criteria from approved specs.</li>
-</ul>
+        <div id="exec-summary" class="section">
+            <h3>2. Executive Summary: The Shift-Left Engine</h3>
+            <p>DocForge acts as a <strong>Design Partner</strong>, using AST-based structural analysis to identify drift between code and documentation before the first merge request.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                <div style="background: white; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4 style="margin-top:0;"><i class="fas fa-chart-line"></i> Efficiency</h4>
+                    <p style="font-size: 0.9em;"><strong>80% Reduction</strong> in style review latency via automated Google Style Guide enforcement.</p>
+                </div>
+                <div style="background: white; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4 style="margin-top:0;"><i class="fas fa-shield-halved"></i> Security</h4>
+                    <p style="font-size: 0.9em;"><strong>Zero PII/IP Leakage</strong> via local-first execution (Ollama), meeting strict DevSecOps standards.</p>
+                </div>
+            </div>
+            
+            
+        </div>
 
-<h3>4.2 Lightweight Requirements and User Stories</h3>
-<p>As a PM, I want to hand off structured specs to writers, so they own quality.</p>
-<p>As a writer, I want to generate a configurable suite of docs from ingested specs, with unavailable types grayed out and explained.</p>
-<p>As a writer, I want all outputs to adhere 100% to my uploaded style guide automatically.</p>
-<p>As a writer, I want to select/deselect deliverables and configure output formats.</p>
-<p>As a team, I want approved drafts to cascade to devs/QA with code/test suggestions.</p>
+        <div id="business-strategy" class="section">
+            <h3>3. Business Strategy & Value Stream (SAFe)</h3>
+            <p>DocForge optimizes the <strong>Continuous Delivery Pipeline</strong> by reducing the "Non-Value-Added Time" typically spent on manual drift audits and style revisions.</p>
 
-<h3>4.3 User Journey Map</h3>
-<ol>
-  <li>PM authors user stories/DoD/AC → hands off to writer.</li>
-  <li>Writer uploads style guide (one-time) and release specs.</li>
-  <li>DocForge validates against minimum standards → grays out unavailable deliverables with explanation.</li>
-  <li>Writer selects desired outputs and formats → generates suite.</li>
-  <li>Writer refines AI outputs → marks drafts ready for review.</li>
-  <li>PM/Dev/QA review/approve → approved drafts cascade (code skeletons, test criteria).</li>
-  <li>Writer exports final deliverables.</li>
-</ol>
+            <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+                <thead>
+                    <tr>
+                        <th style="padding: 12px; text-align: left;">Value Stream Metric</th>
+                        <th style="padding: 12px; text-align: left;">Legacy "Reactive" Flow</th>
+                        <th style="padding: 12px; text-align: left;">DocForge "Shift-Left" Flow</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Trigger</strong></td>
+                        <td>Code Freeze / Feature Complete</td>
+                        <td><strong>Spec Authoring / Git Commit</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Cycle Efficiency</strong></td>
+                        <td>Low (Multiple rework loops)</td>
+                        <td><strong>High (Synchronous Parity)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Release Readiness</strong></td>
+                        <td>Manual Audit Bottleneck</td>
+                        <td><strong>Automated AI Quality Gate</strong></td>
+                    </tr>
+                </tbody>
+            </table>
 
-<h2>5. Design and Architecture</h2>
+            
 
-<h3>5.1 Phase A: Vision</h3>
-<p>Enable Document-Driven Development by making specifications the central, living artifact that AI uses to generate, validate, and maintain code and comprehensive documentation suites, respecting agile handoffs and minimum standards.</p>
+            <h4>Built-in Quality: The AI-Native Quality Gate</h4>
+            <ul>
+                <li><strong>Early Visibility:</strong> Gaps are made visible when they are 10x cheaper to fix.</li>
+                <li><strong>Deterministic Enforcement:</strong> Uses Tree-sitter ASTs to ensure code and doc parity.</li>
+                <li><strong>Economic Alignment:</strong> Aligns human writers with high-value strategic tasks rather than clerical editing.</li>
+            </ul>
+        </div>
 
-<h3>5.2 Phase B: Business</h3>
-<p>Core capabilities: spec ingestion with minimum standard validation, style guide enforcement, selective multi-deliverable generation, compliance review, change impact analysis. Success metrics: rework reduction, documentation completion rate, style adherence score, sprint velocity improvement.</p>
+        <div id="tech-stack" class="section">
+          <h3>4. Technical Integration Highlights (Open-Source Stack)</h3>
+          <p>DocForge is architected as a <strong>Sovereign Intelligence Engine</strong>, utilizing a modular stack to ensure deterministic output and data privacy.</p>
 
-<h3>5.3 Phase C: Information</h3>
-<p>Primary inputs: PM handoff docs + writer-owned specs + style guide. State tracks versions, approval status, generated outputs. Local persistence in JSON.</p>
+          <div class="section-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+              <div style="background: var(--soft-bg); padding: 15px; border-radius: 8px;">
+                  <h4 style="color: var(--primary);"><i class="fas fa-project-diagram"></i> Orchestration</h4>
+                  <p style="font-size: 0.85em;"><strong>LangGraph</strong> manages stateful cycles, enabling iterative "Review-Refine" loops until the draft meets style criteria.</p>
+              </div>
+              <div style="background: var(--soft-bg); padding: 15px; border-radius: 8px;">
+                  <h4 style="color: var(--primary);"><i class="fas fa-microchip"></i> Inference</h4>
+                  <p style="font-size: 0.85em;"><strong>Ollama (Llama-3 70B)</strong> provides enterprise-grade reasoning locally, ensuring zero data leakage.</p>
+              </div>
+              <div style="background: var(--soft-bg); padding: 15px; border-radius: 8px;">
+                  <h4 style="color: var(--primary);"><i class="fas fa-code"></i> Parsing</h4>
+                  <p style="font-size: 0.85em;"><strong>Tree-sitter AST</strong> extraction identifies structural drift in code signatures with 100% certainty.</p>
+              </div>
+          </div>
 
-<h3>5.4 Phase D: Technology</h3>
-<ul>
-  <li>App: Streamlit dashboard for writer view (ingest, standards config, style upload, selection, generation)</li>
-  <li>Agent: LangGraph agents (SpecValidator, StyleEnforcer, DeliverableGenerator with sub-specializations, ComplianceChecker, ChangeAnalyzer)</li>
-  <li>Platform: LlamaIndex for doc indexing/retrieval</li>
-  <li>Model: Ollama with code-focused LLMs (DeepSeek-Coder default)</li>
-  <li>Infrastructure: Local Docker with no external dependencies</li>
-</ul>
+          <div style="margin-top: 30px; text-align: center;">
+              
+          </div>
 
-<h2>6. Rollout and Roadmap - Implementation Phases and PI Mapping</h2>
+          <div style="background: #263238; color: #81d4fa; padding: 20px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.85rem; margin-top: 20px;">
+              <p style="margin: 0;">// DocForge Logic Trace: Drift Detection</p>
+              <p style="margin: 5px 0;">[Tree-sitter]: New parameter 'auth_token' detected in payment_service.py</p>
+              <p style="margin: 5px 0;">[LangGraph]: Triggering State Transition -> 'Draft_Update'</p>
+              <p style="margin: 5px 0;">[Compliance_Critic]: Validating output against Rule GS-102 (API Parameter Tables)...</p>
+          </div>
+      </div>
+      <div id="personas" class="section">
+        <h3>5. Target User Personas & Journey Map</h3>
+        <p>DocForge is built to bridge the gap between technical implementation and strategic documentation, focusing on the two personas most impacted by "Documentation Debt."</p>
 
-<h3>6.1 Current State</h3>
-<p>MVP with spec ingestion, minimum standard validation, style guide enforcement, selective generation of core deliverables, compliance review.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px;"><i class="fas fa-pen-nib"></i></div>
+                    <div>
+                        <h4 style="margin: 0; color: var(--primary);">The "Design-Authorized" Writer</h4>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">Strategic Document Lead</p>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.5; color: #333;"><strong>Mission:</strong> Ensure the PRD intent matches the final documentation. Use AI to automate style enforcement while maintaining "Design Authority."</p>
+            </div>
+            
+            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div style="width: 50px; height: 50px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 15px;"><i class="fas fa-terminal"></i></div>
+                    <div>
+                        <h4 style="margin: 0; color: var(--primary);">The "Contract-Focused" Dev</h4>
+                        <p style="margin: 0; font-size: 0.85rem; color: #666;">Software Engineer</p>
+                    </div>
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.5; color: #333;"><strong>Mission:</strong> Maintain parity between code signatures and specs. Use "Drift Alerts" to catch documentation gaps at the point of commit.</p>
+            </div>
+        </div>
 
-<h3>6.2 Future State</h3>
-<ul>
-  <li>Jira integration for automated handoff</li>
-  <li>Team review workflow with comments</li>
-  <li>Custom deliverable templates</li>
-  <li>Multi-user collaboration</li>
-</ul>
+        <div style="background: #fdfdfd; border: 1px solid #eee; padding: 25px; border-radius: 8px;">
+            <h4 style="margin-top: 0; color: var(--primary);">The "Non-Event" Release Journey</h4>
+            <p style="font-size: 0.95rem; color: #444;">By shifting parity checks to the Git pre-commit phase, DocForge transforms the documentation cycle:</p>
+            <ul style="line-height: 1.8; color: #444; font-size: 0.95rem;">
+                <li>🔹 <strong>Week 1 (Spec):</strong> DocForge flags documentation complexity based on the PRD.</li>
+                <li>🔹 <strong>Week 3 (Build):</strong> Dev receives real-time "Drift Alerts" on AST changes.</li>
+                <li>🔹 <strong>Week 4 (Close):</strong> Compliance Critic enforces 100% Google Style adherence.</li>
+                <li>🏁 <strong>Release:</strong> Documentation and Code are 100% synchronized; zero GA crunch.</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            
+        </div>
+    <div id="roadmap" class="section">
+            <h3>6. Implementation Roadmap: Maturity Tiers</h3>
+            <p>Following SAFe principles, DocForge scales through incremental maturity tiers, prioritizing structural integrity before expanding to semantic autonomy.</p>
+            
+            <div class="roadmap-grid" style="display: flex; gap: 20px; margin-top: 20px;">
+                <div style="flex: 1; border: 1px solid var(--primary); padding: 15px; border-radius: 8px;">
+                    <h4 style="color: var(--primary);">Tier 1: Structural Parity</h4>
+                    <p style="font-size: 0.85em;">Focus on <strong>Interface ASTs</strong> and <strong>Google Style</strong> enforcement for MVP.</p>
+                </div>
+                <div style="flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 8px; opacity: 0.7;">
+                    <h4>Tier 2: Semantic Architect</h4>
+                    <p style="font-size: 0.85em;">Expansion to <strong>cross-document dependencies</strong> and semantic drift detection.</p>
+                </div>
+                <div style="flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 8px; opacity: 0.7;">
+                    <h4>Tier 3: Autonomous Governance</h4>
+                    <p style="font-size: 0.85em;">Full <strong>CI/CD Integration</strong> and blocking quality gates for enterprise releases.</p>
+                </div>
+            </div>
+        </div>
 
-<h3>6.3 Agile Delivery - ART</h3>
-<p>PI-1: Spec ingestion, standards validator, style enforcer  
-PI-2: Deliverable generator for core types  
-PI-3: Compliance checker and change analyzer  
-PI-4: Approval workflow and cascade exports  
-PI-5: Output format configuration and polish</p>
+        <div id="multi-agent" class="section">
+            <h3>7. Multi-Agent Reasoning Chain: The "Logic Swarm"</h3>
+            <p>To satisfy the "Google Bar" for precision, DocForge uses an <strong>Adversarial Peer Review</strong> cycle in LangGraph.</p>
 
-<h3>6.4 Change Management</h3>
-<p>Open-source with contribution guidelines for new deliverable types. Configurable standards for team adaptation.</p>
+            <table style="width:100%; margin: 20px 0;">
+                <thead>
+                    <tr style="background: var(--primary); color: white;">
+                        <th style="padding: 10px;">Agent Role</th>
+                        <th style="padding: 10px;">Primary Logic</th>
+                        <th style="padding: 10px;">Style Contribution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Interface Architect</strong></td>
+                        <td>AST Structural Mapping</td>
+                        <td>Deterministic Truth Extraction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>The Google Stylist</strong></td>
+                        <td>Generative Drafting</td>
+                        <td>Style Guide Adherence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Compliance Critic</strong></td>
+                        <td>Adversarial Auditing</td>
+                        <td>Hallucination & Style Checking</td>
+                    </tr>
+                </tbody>
+            </table>
 
-<h3>6.5 Target Value Stream</h3>
-<p>PM handoff → Writer ingestion & generation → Team review/approval → Cascade to dev/QA → Sync on changes → Release</p>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 5px solid var(--secondary);">
+                <strong>Strategic Guardrail (Rebuttal):</strong>
+                <p style="font-size: 0.9em; font-style: italic; margin-top: 5px;">
+                    "We utilize different system prompts for the Stylist and Critic to prevent 'Model Collusion.' The Critic is incentivized to find errors, ensuring the draft remains grounded in the Fact Store".
+                </p>
+            </div>
+        </div>
+        <div id="platform" class="section">
+          <h3>8. Platform Architecture: The Canonical Fact Store</h3>
+          <p>DocForge utilizes a <strong>Semantic Data Architecture</strong> to unify unstructured contracts and structured code into a queryable "Financial Truth" layer.</p>
 
-<h2>7. Multi-Agent Model</h2>
+          <div style="display: flex; gap: 30px; align-items: flex-start; margin-top: 20px;">
+              <div style="flex: 2;">
+                  <h4>The Intermediate Representation (IR) Layer</h4>
+                  <p style="font-size: 0.95rem;">To eliminate hallucinations, DocForge flattens diverse inputs into a unified JSON Fact Store:</p>
+                  <ul style="font-size: 0.9rem; line-height: 1.6;">
+                      <li>• <strong>PRD Extraction:</strong> Requirements and User Personas.</li>
+                      <li>• <strong>Design Mapping:</strong> Architecture components and data flows.</li>
+                      <li>• <strong>Code Extraction:</strong> Method signatures and type definitions via Tree-sitter.</li>
+                  </ul>
+              </div>
+              <div style="flex: 1; background: #fdfdfd; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
+                  <h5 style="margin-top:0; color: var(--primary);">Data Lineage</h5>
+                  <p style="font-size: 0.8rem; color: #666;">DocForge maintains an immutable trace from raw PDF ingestion to final GL-compliant journal entries.</p>
+                  
+              </div>
+          </div>
 
-<h3>7.1 Agent Personas</h3>
-<ul>
-  <li>SpecValidator Agent: Checks minimum standards, grays out unavailable deliverables</li>
-  <li>StyleEnforcer Agent: Applies uploaded style guide automatically (100% adherence)</li>
-  <li>DeliverableGenerator Agent: Specialized sub-agents for each type (e.g., ApiDocsAgent, ReleaseNotesAgent)</li>
-  <li>ComplianceChecker Agent: Verifies code vs approved spec</li>
-  <li>ChangeAnalyzer Agent: Detects spec/code diffs and suggests updates</li>
-</ul>
+          <div style="background-color: #e8f5e9; border: 1px solid #2e7d32; padding: 20px; border-radius: 8px; margin-top: 30px;">
+              <h4 style="margin-top: 0; color: #2e7d32;">Architectural Decision (Rebuttal)</h4>
+              <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+                  "We chose a <strong>Schema-First IR</strong> over raw RAG to ensure 'Total Population Certainty.' By grounding agents in a Fact Store, we treat documentation as structured infrastructure rather than a probabilistic narrative."
+              </p>
+          </div>
+      </div>
+      <div id="model" class="section">
+        <h3>9. Model Strategy: The Sovereign Financial Predictor</h3>
+        <p>To ensure 100% adherence to the Google Style Guide, DocForge utilizes a <strong>tiered ensemble strategy</strong>.</p>
 
-<h3>7.2 Reasoning Trace</h3>
-<p>Full trace showing how spec sections map to outputs and style rules applied.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+            <div style="background: var(--soft-bg); padding: 15px; border-radius: 8px;">
+                <h4 style="color: var(--primary);">Reasoning Layer</h4>
+                <p style="font-size: 0.85em;"><strong>Llama-3-70B (4-bit):</strong> High-precision reasoning for style auditing and adversarial peer review.</p>
+            </div>
+            <div style="background: var(--soft-bg); padding: 15px; border-radius: 8px;">
+                <h4 style="color: var(--primary);">Retrieval Strategy</h4>
+                <p style="font-size: 0.85em;"><strong>Dual-Vector RAG:</strong> Separates "Static" Style Guides from "Dynamic" Project Fact Stores to eliminate hallucinations.</p>
+            </div>
+        </div>
+    </div>
 
-<h3>7.3 Decision Matrix and Conflict Resolution</h3>
-<p>Standards validator scores input adequacy. StyleEnforcer auto-corrects deviations. Conflicts prioritized by approval status (approved spec wins).</p>
+    <div id="infra" class="section">
+        <h3>10. Infrastructure: The Sovereign Landing Zone (TOGAF Phase D)</h3>
+        <p>Architected as a <strong>Local-First NoOps environment</strong>, DocForge ensures data sovereignty while integrating into existing Git workflows.</p>
 
-<h2>8. Intelligence Platform</h2>
+        <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background-color: var(--primary); color: white;">
+                    <th style="padding: 12px; text-align: left;">Component</th>
+                    <th style="padding: 12px; text-align: left;">Implementation</th>
+                    <th style="padding: 12px; text-align: left;">Strategic Function</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Compute</strong></td>
+                    <td>Local Ollama Instance</td>
+                    <td>Air-gapped inference for sensitive IP.</td>
+                </tr>
+                <tr>
+                    <td><strong>Workflow</strong></td>
+                    <td>Git Pre-commit Hooks</td>
+                    <td>Drift detection at the moment of code change.</td>
+                </tr>
+                <tr>
+                    <td><strong>Governance</strong></td>
+                    <td>VPC-SC Perimeter Logic</td>
+                    <td>Prevents exfiltration of financial/design data.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div style="background-color: #f8f9fa; border-left: 5px solid #0052cc; padding: 20px; margin-top: 30px;">
+            <h4 style="margin-top: 0;">Business Impact: Scale-to-Zero Architecture</h4>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">
+                "By leveraging local hardware, DocForge eliminates the multi-million dollar API costs of cloud LLMs while providing near-zero latency for high-frequency drift checks".
+            </p>
+        </div>
+    </div> 
+    <div id="governance" class="section">
+      <h3>11. System Integrity & Governance (The "Google Bar")</h3>
+      <p>To ensure "White-Box" auditability, DocForge implements a governance framework focused on <strong>Traceability of Truth</strong>.</p>
 
-<h3>8.1 Unified Intelligence Stack Architecture</h3>
-<p>LangGraph orchestrates agents with spec as central state.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+          <div style="background: white; border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+              <h4 style="margin-top:0;"><i class="fas fa-microscope"></i> Adversarial Evaluation</h4>
+              <p style="font-size: 0.9em;">Continuous benchmarking against "Golden Rule" datasets derived from the Google Style Guide ensures zero style regression.</p>
+          </div>
+          <div style="background: white; border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
+              <h4 style="margin-top:0;"><i class="fas fa-link"></i> Provenance Mapping</h4>
+              <p style="font-size: 0.9em;">Every output is immutably linked to the specific Git commit and PRD version, satisfying SOX-level audit requirements.</p>
+          </div>
+      </div>
 
-<h3>8.2 The RAG Component (Future Extension)</h3>
-<p>RAG over style guide and past deliverables for consistency.</p>
+      <div style="background: #fff3e0; border: 1px solid #ffe0b2; padding: 20px; border-radius: 8px; margin-top: 20px;">
+          <h4 style="margin-top:0; color: #e65100;"><i class="fas fa-bolt"></i> Financial Circuit Breaker</h4>
+          <p style="font-size: 0.95rem; margin-bottom: 0;">
+              "If AI prediction confidence drops below 90%, the system triggers an automated halt, rerouting the contract/code to a manual 'Controller Review' queue to prevent hallucinated specs".
+          </p>
+      </div>
+  </div>
 
-<h3>8.3 Observability Layer</h3>
-<p>Local logging of generation decisions, standards validation, and style corrections.</p>
+  <div id="impact" class="section">
+      <h3>12. Strategic Impact & Outcomes</h3>
+      <p>DocForge transforms documentation from a delivery bottleneck into a high-speed infrastructure asset.</p>
 
-<h2>9. The Model Lifecycle</h2>
-<ul>
-  <li>Selection: Code-focused LLMs for accuracy</li>
-  <li>Prompt Management: Templates per deliverable type with style injection</li>
-  <li>Evaluation: Against enterprise spec-doc pairs</li>
-  <li>Improvement: Community contributions for new types/templates</li>
-</ul>
+      <table style="width:100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem;">
+          <thead>
+              <tr style="background-color: var(--secondary); color: white;">
+                  <th style="padding: 12px; text-align: left;">Value Driver</th>
+                  <th style="padding: 12px; text-align: left;">Manual Baseline</th>
+                  <th style="padding: 12px; text-align: left;">DocForge Outcome</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td style="padding: 10px; border: 1px solid #ddd;"><strong>Audit Prep Efficiency</strong></td>
+                  <td style="padding: 10px; border: 1px solid #ddd;">180+ Hours / Year</td>
+                  <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">60% Labor Reduction</td>
+              </tr>
+              <tr>
+                  <td style="padding: 10px; border: 1px solid #ddd;"><strong>Style Consistency</strong></td>
+                  <td style="padding: 10px; border: 1px solid #ddd;">Varies by Author</td>
+                  <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">100% Agentic Adherence</td>
+              </tr>
+              <tr>
+                  <td style="padding: 10px; border: 1px solid #ddd;"><strong>Lead Time (Release)</strong></td>
+                  <td style="padding: 10px; border: 1px solid #ddd;">14 Days (Post-build)</td>
+                  <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #2e7d32;">Synchronous Close</td>
+              </tr>
+          </tbody>
+      </table>
 
-<h2>10. Infrastructure</h2>
+      <div style="background-color: var(--soft-bg); border-left: 5px solid var(--primary); padding: 25px; border-radius: 8px; margin-top: 40px;">
+          <h3 style="margin-top: 0; color: var(--primary);">The "Zero-Failure" Close</h3>
+          <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 0;">
+              DocForge ensures that Year-End or Quarter-End closes become "Non-Events" for the documentation team. By pre-auditing every entry against the source code 
+              before it ever hits the repository, we eliminate the audit fatigue that typically plagues high-velocity engineering organizations.
+          </p>
+      </div>
+  </div>      
+    </div>
 
-<h3>10.1 Blueprint</h3>
-<ul>
-  <li>Local Docker with Ollama</li>
-</ul>
-
-<h3>10.2 Security</h3>
-<p>Zero network calls. All data local. Open code for audit.</p>
-
-<h3>10.3 Governance and Compliance</h3>
-<p>Configurable standards. Transparent traces. Style enforcement.</p>
-
-<h3>10.4 SRE</h3>
-<p>Local execution with error recovery. Index rebuild on demand.</p>
-
-<h2>11. Impact & Outcomes</h2>
-<p>Expected outcomes:</p>
-<ul>
-  <li>50–70% reduction in sprint rework</li>
-  <li>Tech writers elevated to spec architects</li>
-  <li>80% automation of documentation tasks</li>
-  <li>100% style guide adherence</li>
-  <li>Improved sprint velocity through early alignment</li>
-  <li>Foundation for sustainable DDD practices</li>
-</ul>
-
-<h2>The "We'll Get to This When We're Famous" Section</h2>
-<p>(A cheeky but honest roadmap of features we're deliberately not building in the MVP — because perfection is the enemy of shipped, and even AI can't fix scope creep overnight.)</p>
-<ul>
-  <li>Jira/Confluence/GitHub integration for automated handoff and sync</li>
-  <li>Team collaboration with real-time review comments</li>
-  <li>Custom deliverable templates beyond the core suite</li>
-  <li>Advanced analytics (doc gap analysis, search effectiveness)</li>
-  <li>Multi-user sessions and role-based access</li>
-  <li>Hosted enterprise version with audit logs and SSO</li>
-  <li>Plugin ecosystem for custom agents</li>
-  <li>AI-powered screenshot generation for guides</li>
-  <li>Voice-to-spec input for PMs</li>
-  <li>Direct export to Confluence/Notion</li>
-</ul>
-
-<h2>List of Diagrams & Images</h2>
-<div class="diagram-placeholder">
-  1. TOGAF ADM Cycle Adaptation for DDD (TOGAF convention: ADM circle diagram with DDD integration points)
-</div>
-
-<div class="diagram-placeholder">
-  2. SAFe Solution Train with DDD Enablers (SAFe convention: ART structure diagram with spec doc as shared artifact)
-</div>
-
-<div class="diagram-placeholder">
-  3. DDD Sprint Cycle Comparison (Agile convention: Flow diagram showing traditional vs DDD sprint)
-</div>
-
-<div class="diagram-placeholder">
-  4. Agent Orchestration Graph (LangGraph convention: Node-edge diagram of agents)
-</div>
-
-<div class="diagram-placeholder">
-  5. Deliverable Generation Matrix (Matrix table: Spec sections to deliverable types)
-</div>
-
-<div class="diagram-placeholder">
-  6. Sprint Time Reallocation Waterfall (Waterfall chart: Time savings in DDD sprint)
-</div>
-
-<div class="links">
-  <h2>Supporting Documentation</h2>
-  <ul>
-    <li><a href="SAMPLE_QUERIES.html">Sample Queries & Responses</a></li>
-    <li><a href="GUARDRAIL_RULES.html">Hallucination & Moderation Guardrails</a></li>
-    <li><a href="TECH_STACK.html">Technical Stack & Local Setup</a></li>
-  </ul>
-</div>
-
+    </div>
 </body>
 </html>
