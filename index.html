@@ -18,108 +18,132 @@
         <h1>DocForge – Strategic Shift-Left Documentation Engine<br>
         <small>Enabling Document-Driven Development (DDD) via Deterministic Drift Detection</small></h1>
 
-        <p class="project-description" style="font-size: 1.1em; line-height: 1.8; margin-top: 20px;">
+        <p class="project-description">
             DocForge is an open-source, local-first multi-agent system that transforms documentation from a reactive delivery task into a proactive design discipline. 
             By integrating directly into engineering change points, it ensures 100% parity between Interface Contracts and the Google Developer Documentation Style Guide.
         </p>
 
         <div id="strategic-gap" class="section">
             <h3>1. The Strategic Gap: Documentation-Code Parity</h3>
-            <p>In high-velocity Agile environments, documentation is frequently treated as a <strong>downstream artifact</strong>—a "cleanup task" performed after the code is merged. This creates a structural "Documentation Debt" where the PRD, the design specs, and the final implementation inevitably drift apart.</p>
+            <p>In high-velocity Agile environments, documentation is frequently treated as a downstream artifact. This creates a structural "Documentation Debt" where the PRD and implementation inevitably drift apart.</p>
             
-            <ul style="list-style: none; padding-left: 0;">
-                <li>• <strong>The High Cost of Late Discovery:</strong> Technical gaps discovered post-release lead to expensive re-work.</li>
-                <li>• <strong>The "Black Box" Risk:</strong> Lack of parity increases compliance friction and reduces stakeholder trust.</li>
-            </ul>
-
             
-            <h4 style="margin-top: 25px; color: var(--primary);">The DDD Mission: From Delivery Task to Design Discipline</h4>
-            <p>DocForge enables <strong>Document-Driven Development (DDD)</strong> by repositioning documentation as the primary source of truth.</p>
-            <ul style="list-style: none; padding-left: 0;">
-                <li>• <strong>Shifting Left:</strong> Surfaces documentation impact the moment a design decision is made.</li>
-                <li>• <strong>Design Authority:</strong> Ensures clarity is established before resources are committed to engineering.</li>
-            </ul>
 
             <div style="background: var(--soft-bg); padding: 20px; border-radius: 8px; border-left: 5px solid var(--border); margin-top: 20px;">
-                <strong style="color: var(--primary);">Intentional Constraints (The Anti-Scope):</strong>
-                <p style="font-size: 0.9em; margin-top: 10px; line-height: 1.6;">
-                    • <strong>No Auto-Commits:</strong> The human Tech Writer remains the final "Design Authority."<br>
-                    • <strong>Interface-First Focus:</strong> Intentionally ignores internal function logic to avoid "noise."<br>
-                    • <strong>Clarity over Creativity:</strong> Focuses on technical precision, not replacing the creative voice.
+                <strong style="color: var(--primary);">Architectural Guardrails (Anti-Scope):</strong>
+                <p style="font-size: 0.9em; margin-top: 10px;">
+                    • <strong>No Auto-Commits:</strong> The human writer remains the final Design Authority.<br>
+                    • <strong>Interface-First:</strong> Ignores internal logic to focus on public API contracts.<br>
+                    • <strong>Zero Data Leakage:</strong> Local execution only; no third-party cloud ingestion.
                 </p>
             </div>
         </div>
 
         <div id="exec-summary" class="section">
             <h3>2. Executive Summary: The Shift-Left Engine</h3>
-            <p>DocForge acts as a <strong>Design Partner</strong>, using AST-based structural analysis to identify drift between code and documentation before the first merge request.</p>
+            <p>DocForge acts as a Design Partner, using AST-based structural analysis to identify drift before the first merge request.</p>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 25px 0;">
-                <div style="background: var(--soft-bg); border: 1px solid #ddd; padding: 20px; border-radius: 12px;">
-                    <h4 style="margin-top:0; color: var(--primary);"><i class="fas fa-chart-line"></i> Efficiency</h4>
-                    <p style="font-size: 0.9em;"><strong>80% Reduction</strong> in style review latency via automated Google Style Guide enforcement.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: var(--soft-bg); padding: 20px; border-radius: 12px; border: 1px solid #ddd;">
+                    <h4 style="margin:0; color: var(--primary);"><i class="fas fa-bolt"></i> 80% Faster</h4>
+                    <p style="font-size: 0.85em; margin-top: 5px;">Reduction in style review labor via agentic enforcement.</p>
                 </div>
-                <div style="background: var(--soft-bg); border: 1px solid #ddd; padding: 20px; border-radius: 12px;">
-                    <h4 style="margin-top:0; color: var(--primary);"><i class="fas fa-shield-halved"></i> Security</h4>
-                    <p style="font-size: 0.9em;"><strong>Zero PII/IP Leakage</strong> via local-first execution (Ollama), meeting strict DevSecOps standards.</p>
+                <div style="background: var(--soft-bg); padding: 20px; border-radius: 12px; border: 1px solid #ddd;">
+                    <h4 style="margin:0; color: var(--primary);"><i class="fas fa-lock"></i> Local-First</h4>
+                    <p style="font-size: 0.85em; margin-top: 5px;">Enterprise-grade privacy using quantized Llama-3 locally.</p>
                 </div>
             </div>
-            
-                    </div>
+        </div>
 
         <div id="business-strategy" class="section">
             <h3>3. Business Strategy & Value Stream (SAFe)</h3>
-            <p>DocForge optimizes the <strong>Continuous Delivery Pipeline</strong> by reducing the "Non-Value-Added Time" typically spent on manual drift audits and style revisions.</p>
+            <p>Following SAFe principles, DocForge optimizes the Continuous Delivery Pipeline by reducing Non-Value-Added Time in the review cycle.</p>
 
-            <table style="width:100%; border-collapse: collapse; margin: 25px 0;">
+            
+
+            <table style="width:100%; border-collapse: collapse; margin-top: 20px;">
                 <thead>
-                    <tr style="background-color: var(--primary); color: white;">
-                        <th style="padding: 15px; text-align: left;">Value Stream Metric</th>
-                        <th style="padding: 15px; text-align: left;">Legacy "Reactive" Flow</th>
-                        <th style="padding: 15px; text-align: left;">DocForge "Shift-Left" Flow</th>
+                    <tr>
+                        <th style="padding: 12px; text-align: left;">Metric</th>
+                        <th style="padding: 12px; text-align: left;">Legacy Reactive</th>
+                        <th style="padding: 12px; text-align: left;">DocForge Shift-Left</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Trigger</strong></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Code Freeze / Feature Complete</td>
-                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: var(--secondary);">Spec Authoring / Git Commit</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Trigger</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">GA / Feature Freeze</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Git Commit / Spec Handoff</strong></td>
                     </tr>
                     <tr>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Process Efficiency</strong></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Low (Multiple rework loops)</td>
-                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: var(--secondary);">High (Synchronous Parity)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Release Readiness</strong></td>
-                        <td style="padding: 12px; border: 1px solid #ddd;">Manual Audit Bottleneck</td>
-                        <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: var(--secondary);">Automated AI Quality Gate</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Quality Gate</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Manual Style Audit</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;"><strong>Automated Agentic Review</strong></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-                    </div>
+        <div id="tech-stack" class="section">
+            <h3>4. Technical Integration Highlights</h3>
+            <ul style="columns: 2; column-gap: 40px; list-style: none; padding-left: 0; line-height: 1.8;">
+                <li>• <strong>LangGraph</strong> for cyclic agentic reasoning</li>
+                <li>• <strong>Tree-sitter</strong> for deterministic AST parsing</li>
+                <li>• <strong>Ollama</strong> for local Llama-3 70B inference</li>
+                <li>• <strong>FAISS</strong> for local style-guide RAG</li>
+                <li>• <strong>Unstructured.io</strong> for PRD/FRD ingestion</li>
+                <li>• <strong>Rich/Python</strong> for CLI-based drift alerts</li>
+            </ul>
+        </div>
+
+        <div id="roadmap" class="section">
+            <h3>5. Implementation Roadmap: Maturity Tiers</h3>
+            <div style="display: flex; gap: 20px; margin-top: 20px;">
+                <div style="flex: 1; border: 1px solid var(--primary); padding: 15px; border-radius: 8px; background: var(--soft-bg);">
+                    <h4 style="color: var(--primary); margin-top: 0;">Tier 1: MVP</h4>
+                    <p style="font-size: 0.85em;">Structural drift detection and Google Style enforcement for API contracts.</p>
+                </div>
+                <div style="flex: 1; border: 1px solid #ddd; padding: 15px; border-radius: 8px;">
+                    <h4 style="margin-top: 0;">Tier 2: Scale</h4>
+                    <p style="font-size: 0.85em;">Cross-document semantic dependency mapping and multi-PRD ingestion.</p>
+                </div>
+            </div>
+        </div>
 
         <div id="multi-agent" class="section">
-            <h3>4. Multi-Agent Reasoning Chain</h3>
-            <p>To ensure accuracy, we implement a conflict resolution strategy between specialized agents:</p>
+            <h3>6. Multi-Agent Reasoning Chain</h3>
+            <p>Utilizing a supervisor pattern to prevent model collusion and ensure adversarial auditing.</p>
             
-            <div style="background: var(--soft-bg); padding: 25px; border-radius: 12px; margin-top: 20px;">
-                <ul style="list-style: none; padding-left: 0; line-height: 2;">
-                    <li>• <strong>Interface Architect:</strong> Extracts deterministic code structural data via Tree-sitter.</li>
-                    <li>• <strong>Google Stylist:</strong> Generates drafts following strict Google Developer Style Guide constraints.</li>
-                    <li>• <strong>Compliance Critic:</strong> Performs adversarial auditing to detect hallucinations or style breaches.</li>
-                </ul>
-            </div>
             
-                    </div>
 
-        <div id="impact" class="section">
-            <div style="background-color: var(--soft-bg); border-left: 6px solid var(--primary); padding: 30px; border-radius: 8px;">
-                <h4 style="margin-top: 0; color: var(--primary);">Intelligence Dividend</h4>
-                <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 0;">
-                    By shifting documentation impact upstream, teams achieve <strong>Zero Reconciliation</strong> between code and specs. DocForge validates changes in under 10 seconds, converting documentation from a delivery bottleneck into a high-speed infrastructure asset.
-                </p>
+            <div style="background: #263238; color: #81d4fa; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.85em; margin-top: 20px;">
+                <p style="margin: 0;">[Compliance_Critic]: Detected 'active voice' violation in Section 4.2.</p>
+                <p style="margin: 5px 0;">[Google_Stylist]: Re-drafting... Applying 'Action Verb' constraint (GS-102).</p>
+                <p style="margin: 0;">[Interface_Architect]: Verified: Doc now matches Code Signature #7bf21.</p>
+            </div>
+        </div>
+
+        <div id="platform" class="section">
+            <h3>7. Platform Architecture (TOGAF Phase C)</h3>
+            <p>The <strong>Canonical Fact Store</strong> transforms messy source files into a unified JSON Intermediate Representation.</p>
+            
+            
+
+            <div style="margin-top: 20px;">
+                <h4 style="color: var(--primary);">Deterministic AST Alignment</h4>
+                <p>Unlike probabilistic RAG, DocForge uses Tree-sitter to ensure mathematical parity between code objects and doc anchors.</p>
+            </div>
+        </div>
+
+        <div id="infra" class="section">
+            <h3>8. Sovereign Infrastructure (TOGAF Phase D)</h3>
+            <p>A "Zero-Leakage" architecture designed for high-security enterprise environments.</p>
+            
+            
+
+            <div style="background: #e8f5e9; border: 1px solid #2e7d32; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h4 style="margin-top: 0; color: #2e7d32;">Intelligence Dividend</h4>
+                <p style="font-size: 0.95em; margin-bottom: 0;">By centralizing the fabric locally, we achieve Zero Reconciliation and near-zero latency, allowing agents to validate changes in seconds.</p>
             </div>
         </div>
 
