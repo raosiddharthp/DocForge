@@ -217,6 +217,71 @@
                 </p>
             </div>
         </section>
+        
+        <div style="margin-top: 35px; padding: 30px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+          <h3 style="color: #00008b; margin-bottom: 25px; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #eef4ff; padding-bottom: 10px;">Technical Integration Highlights (Open-Source Stack)</h3>
+      
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+              DocForge is built on a Modular Open-Source Stack designed for enterprise-grade reliability and data sovereignty. By decoupling the orchestration from the inference, the platform maintains flexibility across evolving LLM landscapes while ensuring a deterministic "Source of Truth" through code-level analysis.
+          </p>
+      
+          <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">The Orchestration Layer: LangGraph & Cyclic Reasoning</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+              Unlike standard linear RAG pipelines that generate a single output, DocForge utilizes LangGraph to manage complex, stateful cycles.
+          </p>
+          <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+              <li>Iterative Refinement: Documentation requires multiple passes (Draft → Review → Refine). LangGraph enables the system to "loop" until the Compliance Critic agent verifies 100% style adherence.</li>
+              <li>State Management: The "State" maintains the context of the PRD, Code ASTs, and previous draft versions, ensuring the agent doesn't lose track of technical constraints during long-form generation.</li>
+          </ul>
+      
+          <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">The Inference Strategy: Local-First Ollama</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+              To meet the DevSecOps requirements of enterprise IP, DocForge runs entirely offline.
+          </p>
+          <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+              <li>Sovereign Execution: Utilizing Ollama to serve Llama-3 (70B) ensures that sensitive PRDs and source code never leave the local environment, eliminating the risk of data leakage to third-party providers.</li>
+              <li>Resource Optimization: The system is optimized for Apple Silicon/Unified Memory and high-end NVIDIA hardware, using 4-bit quantization to balance reasoning depth with local latency.</li>
+          </ul>
+      
+          <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">The Parsing Engine: Tree-sitter & Markdown AST</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+              Documentation-Code parity cannot rely on LLM "reading" alone; it requires Structural Mapping.
+          </p>
+          <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+              <li>Deterministic Extraction: Tree-sitter is used to generate Abstract Syntax Trees (AST) from source code. This allows DocForge to detect changes in function signatures, return types, and parameter counts with 100% mathematical certainty.</li>
+              <li>Structural Alignment: By converting both the code and the existing documentation into ASTs, the platform performs a Logical Diff to identify drift that semantic embeddings might miss.</li>
+          </ul>
+      
+          <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px; font-style: italic;">
+              Standard RAG is great for retrieval, but it lacks Logic Control. In technical documentation, 'close enough' is a failure. By using Tree-sitter for deterministic structural extraction and LangGraph for multi-pass agentic review, we move from a probabilistic system (hoping the LLM gets it right) to a governed system. We use the LLM for the linguistic heavy-lifting, but the Architectural State Machine enforces the rules.
+          </p>
+      
+          <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+              <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                  <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+                  <span>TOGAF Approach: Architecture Diagram</span>
+              </summary>
+              <div style="padding: 15px; text-align: center; background: #ffffff;">
+                  <img src="docforge_togaf_diagram.png" alt="TOGAF ADM Cycle for DocForge" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                  <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                      Illustration of TOGAF ADM phases applied to DocForge's architecture, showing business, data, application, and technology layers for drift detection.
+                  </p>
+              </div>
+          </details>
+      
+          <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+              <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                  <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+                  <span>SAFe Approach: Value Stream Mapping</span>
+              </summary>
+              <div style="padding: 15px; text-align: center; background: #ffffff;">
+                  <img src="docforge_safe_vsm.png" alt="SAFe Value Stream for Documentation Workflow" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                  <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                      SAFe value stream map optimizing the continuous delivery pipeline, reducing non-value-added time in documentation audits.
+                  </p>
+              </div>
+          </details>
+      </div>
 
         <section id="impact-outcomes" style="max-width: 1000px; margin: 40px auto; padding: 0 20px; padding-bottom: 60px;">
             <h2 style="color: #00008b; border-bottom: 2px solid #0052cc; padding-bottom: 10px;">Impact & Outcomes: The DDD Transformation</h2>
