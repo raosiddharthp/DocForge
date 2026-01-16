@@ -435,6 +435,78 @@
       </details>
   </div>
 
+  <div style="margin-top: 35px; padding: 30px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <h3 style="color: #00008b; margin-bottom: 25px; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #eef4ff; padding-bottom: 10px;">Multi-Agent Reasoning Chain (The "Logic Swarm")</h3>
+
+    <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+        This is the "Brain" of DocForge. We utilize a Hierarchical Supervisor pattern in LangGraph to ensure that the generation process is governed and auditable.
+    </p>
+
+    <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">The Adversarial Agent Personas</h4>
+    <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+        <li>The Interface Architect: Extracts the "Truth" from the Tree-sitter AST. It provides the deterministic facts that the other agents must not deviate from.</li>
+        <li>The Google Stylist: A generative agent fine-tuned via prompting on the Google Developer Style Guide. Its goal is to maximize clarity and follow the rules of "active voice" and "precision verbs."</li>
+        <li>The Compliance Critic: This agent is the Adversarial Auditor. It does not write; it only critiques. It compares the Stylist’s draft against the "Fact Store" and the "Style Guide" and issues a Non-Conformance Report (NCR) if it detects a hallucination or style breach.</li>
+    </ul>
+
+    <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">The Decision Matrix: Resolving Drift</h4>
+    <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+        When code and documentation disagree, DocForge uses a Conflict Resolution Strategy to determine the next action.
+    </p>
+    <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; border: 1px solid #ddd;">
+        <thead>
+            <tr style="background-color: #f2f6ff; text-align: left;">
+                <th style="padding: 12px; border: 1px solid #ddd;">Scenario</th>
+                <th style="padding: 12px; border: 1px solid #ddd;">Agent Logic</th>
+                <th style="padding: 12px; border: 1px solid #ddd;">System Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;">Code deviates from PRD</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Interface Architect detects structural mismatch; Compliance Critic flags as non-conformance.</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Issues Drift Alert to Developer; suggests PRD update or code revision.</td>
+            </tr>
+            <tr style="background-color: #f8f9fa;">
+                <td style="padding: 10px; border: 1px solid #ddd;">Style breach in draft</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Google Stylist generates draft; Compliance Critic audits against Style Guide.</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Loops back to Stylist for refinement until 100% adherence.</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border: 1px solid #ddd;">Hallucination detected</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Compliance Critic compares draft to Fact Store from AST.</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">Generates NCR; requires human Design Authority intervention.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+        <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+            <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+            <span>TOGAF Approach: Architecture Diagram</span>
+        </summary>
+        <div style="padding: 15px; text-align: center; background: #ffffff;">
+            <img src="docforge_togaf_diagram.png" alt="TOGAF ADM Cycle for DocForge" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                Illustration of TOGAF ADM phases applied to DocForge's architecture, showing business, data, application, and technology layers for drift detection.
+            </p>
+        </div>
+    </details>
+
+    <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+        <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+            <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+            <span>SAFe Approach: Value Stream Mapping</span>
+        </summary>
+        <div style="padding: 15px; text-align: center; background: #ffffff;">
+            <img src="docforge_safe_vsm.png" alt="SAFe Value Stream for Documentation Workflow" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                SAFe value stream map optimizing the continuous delivery pipeline, reducing non-value-added time in documentation audits.
+            </p>
+        </div>
+    </details>
+</div>
+
         <section id="impact-outcomes" style="max-width: 1000px; margin: 40px auto; padding: 0 20px; padding-bottom: 60px;">
             <h2 style="color: #00008b; border-bottom: 2px solid #0052cc; padding-bottom: 10px;">Impact & Outcomes: The DDD Transformation</h2>
             
