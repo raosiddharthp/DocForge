@@ -507,6 +507,62 @@
     </details>
 </div>
 
+<div style="margin-top: 35px; padding: 30px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+  <h3 style="color: #00008b; margin-bottom: 25px; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #eef4ff; padding-bottom: 10px;">Platform Architecture: The Canonical Fact Store</h3>
+
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+      To solve the "Truth Drift" problem, DocForge does not allow the LLM to access raw, messy source files directly. Instead, the platform implements a Semantic Data Architecture that unifies unstructured PRDs and structured code into a queryable Canonical Fact Store.
+  </p>
+
+  <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">The Intermediate Representation (IR) Layer</h4>
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+      DocForge transforms diverse inputs into a unified JSON-based Intermediate Representation (IR). This IR serves as the "Sovereign Source of Truth" for all agentic actions.
+  </p>
+  <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+      <li>Multi-Source Flattening: Extracts "Requirements" from PRDs, "Component Logic" from Design Docs, and "Method Signatures" from Code.</li>
+      <li>Entity Linking: Maps a specific user story in the PRD to the exact function signature in the source code using Metadata Anchors.</li>
+  </ul>
+
+  <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">Structural Alignment: AST-to-AST Mapping</h4>
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+      Unlike traditional RAG which relies on fuzzy semantic similarity, DocForge performs Structural Alignment.
+  </p>
+  <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+      <li>Deterministic Diffing: By converting both the code and the documentation into Abstract Syntax Trees (AST) via Tree-sitter, the platform identifies mismatches with mathematical precision.</li>
+      <li>The Fact Store API: Agents query this store to verify facts before generating text, ensuring that every claim in a "How-to" guide is backed by a verified code symbol.</li>
+  </ul>
+
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px; font-style: italic;">
+      Vector databases are excellent for semantic retrieval (finding 'something like this'), but they lack Logic Control. In documentation, a missing parameter is a failure, not a 'semantic similarity' drop. By building a Canonical Fact Store, we move the logic from a probabilistic LLM layer to a deterministic Data Engineering layer. This ensures the agents are grounded in a verified schema, not just a list of retrieved text chunks.
+  </p>
+
+  <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+      <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+          <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+          <span>TOGAF Approach: Architecture Diagram</span>
+      </summary>
+      <div style="padding: 15px; text-align: center; background: #ffffff;">
+          <img src="docforge_togaf_diagram.png" alt="TOGAF ADM Cycle for DocForge" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+          <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+              Illustration of TOGAF ADM phases applied to DocForge's architecture, showing business, data, application, and technology layers for drift detection.
+          </p>
+      </div>
+  </details>
+
+  <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+      <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+          <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+          <span>SAFe Approach: Value Stream Mapping</span>
+      </summary>
+      <div style="padding: 15px; text-align: center; background: #ffffff;">
+          <img src="docforge_safe_vsm.png" alt="SAFe Value Stream for Documentation Workflow" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+          <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+              SAFe value stream map optimizing the continuous delivery pipeline, reducing non-value-added time in documentation audits.
+          </p>
+      </div>
+  </details>
+</div>
+
         <section id="impact-outcomes" style="max-width: 1000px; margin: 40px auto; padding: 0 20px; padding-bottom: 60px;">
             <h2 style="color: #00008b; border-bottom: 2px solid #0052cc; padding-bottom: 10px;">Impact & Outcomes: The DDD Transformation</h2>
             
