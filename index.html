@@ -614,6 +614,62 @@
   </details>
 </div>
 
+<div style="margin-top: 35px; padding: 30px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+  <h3 style="color: #00008b; margin-bottom: 25px; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #eef4ff; padding-bottom: 10px;">Infrastructure: The Sovereign Landing Zone (TOGAF Phase D)</h3>
+
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+      The infrastructure is architected as an Air-Gapped Developer Environment to eliminate the security review bottleneck inherent in cloud-based GenAI tools.
+  </p>
+
+  <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">Local-First "No-Ops" Deployment</h4>
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+      DocForge operates as a Headless Engine on the developer's local machine, utilizing Ollama for model management.
+  </p>
+  <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+      <li><strong>VPC-SC Simulation:</strong> The system mimics a VPC Service Control perimeter by restricting all network calls, ensuring that sensitive PRDs and source code never leave the local hardware.</li>
+      <li><strong>Resource Sovereignty:</strong> Optimized for Apple Silicon Unified Memory or high-end NVIDIA GPUs, the platform uses CMEK (Customer Managed Encryption Keys) for any local metadata storage.</li>
+  </ul>
+
+  <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">Git-Native Integration</h4>
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+      Instead of a separate UI, DocForge integrates directly into the developer's current workflow:
+  </p>
+  <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+      <li><strong>Git Hooks:</strong> A pre-commit hook triggers the Interface Architect to scan for structural drift before a push is allowed.</li>
+      <li><strong>CLI-First Interaction:</strong> Provides a "Rich" terminal output for real-time "Drift Alerts" and style violation reports.</li>
+  </ul>
+
+  <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px; font-style: italic;">
+      We treat the DocForge Engine as a version-controlled binary and the Fact Store as a distributed asset. While execution is local for PII safety, the Evaluation Benchmarks and Style Guide Embeddings are synced via a centralized, internal repository. This provides the best of both worlds: Centralized Governance (SAFe) and Decentralized Execution (DevSecOps).
+  </p>
+
+  <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+      <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+          <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+          <span>TOGAF Approach: Architecture Diagram</span>
+      </summary>
+      <div style="padding: 15px; text-align: center; background: #ffffff;">
+          <img src="docforge_infra_togaf.png" alt="TOGAF Phase D: Infrastructure Architecture for Sovereign AI" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+          <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+              Visualizing the air-gapped infrastructure design, highlighting the VPC-SC simulation and local hardware optimization for secure model execution.
+          </p>
+      </div>
+  </details>
+
+  <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+      <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+          <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+          <span>SAFe Approach: Value Stream Mapping</span>
+      </summary>
+      <div style="padding: 15px; text-align: center; background: #ffffff;">
+          <img src="docforge_infra_vsm.png" alt="SAFe Value Stream for DevSecOps Integration" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+          <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+              SAFe value stream depicting the decentralized execution of local Git hooks synchronized with centralized governance benchmarks.
+          </p>
+      </div>
+  </details>
+</div>
+
         <section id="impact-outcomes" style="max-width: 1000px; margin: 40px auto; padding: 0 20px; padding-bottom: 60px;">
             <h2 style="color: #00008b; border-bottom: 2px solid #0052cc; padding-bottom: 10px;">Impact & Outcomes: The DDD Transformation</h2>
             
