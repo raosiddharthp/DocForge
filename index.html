@@ -282,6 +282,105 @@
               </div>
           </details>
       </div>
+      
+      <div style="margin-top: 35px; padding: 30px; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <h3 style="color: #00008b; margin-bottom: 25px; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #eef4ff; padding-bottom: 10px;">Target User Personas & Journey Map</h3>
+    
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+            To ensure DocForge solves the "Uncomfortable Truths" of Documentation-Driven Development (DDD), we designed for two distinct personas who bear the brunt of documentation debt.
+        </p>
+    
+        <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem;">Strategic Personas: The Stakeholders of Truth</h4>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+            The Journey: From Reactive Chaos to Proactive Parity
+        </p>
+    
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div style="background: #007bff; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">TW</div>
+                    <h5 style="margin: 0; color: #333; font-size: 1rem;">The "Design Authorized" Tech Writer<br><small>Strategic Lead</small></h5>
+                </div>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;"><strong>Role & Context:</strong> Owns the narrative and the Google Style Guide adherence.</p>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;"><strong>Goal:</strong> Shift from "Cleanup Crew" to "Design Partner."</p>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;"><strong>Pain:</strong> Last-minute GA chaos and "clerical" editing fatigue.</p>
+                <p style="font-size: 0.9rem; color: #555;"><strong>How DocForge Helps:</strong> Automates style enforcement and drift detection, reducing clerical load by 80% and allowing focus on strategic narrative.</p>
+            </div>
+    
+            <div style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div style="background: #007bff; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px;">CD</div>
+                    <h5 style="margin: 0; color: #333; font-size: 1rem;">The "Contract Focused" Developer<br><small>Implementation Lead</small></h5>
+                </div>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;"><strong>Role & Context:</strong> Owns the code structural integrity.</p>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;"><strong>Goal:</strong> Minimize documentation friction and context-switching.</p>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;"><strong>Pain:</strong> Manually syncing doc updates to code changes (API signatures).</p>
+                <p style="font-size: 0.9rem; color: #555;"><strong>How DocForge Helps:</strong> Provides real-time drift alerts via Git Hooks, catching errors early and reducing context switches by 70%.</p>
+            </div>
+        </div>
+    
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+            We mapped the user journey to emphasize the "Shift-Left" signals. Instead of a manual audit at the end of the release cycle, DocForge provides continuous, advisory feedback.
+        </p>
+    
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95em; border: 1px solid #ddd;">
+            <thead>
+                <tr style="background-color: #f2f6ff; text-align: left;">
+                    <th style="padding: 12px; border: 1px solid #ddd;">Stage</th>
+                    <th style="padding: 12px; border: 1px solid #ddd;">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">1. Ingestion & Goal Alignment</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">The Tech Writer and PM hand off the PRD. DocForge parses the spec into the Canonical Fact Store, identifying the documentation impact before code is written.</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">2. The "Advisory" Shift</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">As the Developer writes code, local Git Hooks trigger DocForge. If a function signature deviates from the PRD, the Dev receives a "Drift Alert" in their CLI—catching the error in minutes, not weeks.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">3. Agentic Peer Review</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">The Tech Writer initiates a "Draft Cycle." The Google Stylist generates the draft, and the Compliance Critic audits it. The Writer receives a 95% complete document, needing only a final "Design Authority" review.</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">4. The "Non-Event" Release</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Because parity was enforced during the build, the final documentation is already in sync with the code. Release notes are generated automatically, and the team avoids the traditional "GA Crunch."</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+            We intentionally designed DocForge to empower, not replace, the writer. Automation is excellent for adherence (Style Guides) and detection (Drift), but it cannot replace the judgment required to author a strategic technical narrative. By removing the 80% clerical load, we allow writers to focus on the 20% high-value work: design intent and user experience. This reflects the Google principle of leveraging AI to enhance human craft, not just to cut costs.
+        </p>
+    
+        <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+            <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+                <span>TOGAF Approach: Architecture Diagram</span>
+            </summary>
+            <div style="padding: 15px; text-align: center; background: #ffffff;">
+                <img src="docforge_togaf_diagram.png" alt="TOGAF ADM Cycle for DocForge" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                    Illustration of TOGAF ADM phases applied to DocForge's architecture, showing business, data, application, and technology layers for drift detection.
+                </p>
+            </div>
+        </details>
+    
+        <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+            <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+                <span>SAFe Approach: Value Stream Mapping</span>
+            </summary>
+            <div style="padding: 15px; text-align: center; background: #ffffff;">
+                <img src="docforge_safe_vsm.png" alt="SAFe Value Stream for Documentation Workflow" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                    SAFe value stream map optimizing the continuous delivery pipeline, reducing non-value-added time in documentation audits.
+                </p>
+            </div>
+        </details>
+    </div>
+
 
         <section id="impact-outcomes" style="max-width: 1000px; margin: 40px auto; padding: 0 20px; padding-bottom: 60px;">
             <h2 style="color: #00008b; border-bottom: 2px solid #0052cc; padding-bottom: 10px;">Impact & Outcomes: The DDD Transformation</h2>
