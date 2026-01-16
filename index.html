@@ -12,7 +12,7 @@
     
 
     <div class="main-content">
-        <h1>DocForge – Enabling Document-Driven Development (DDD) via Deterministic Drift Detection<br><small>Open-Source, Local-First Multi-Agent System for Spec-First Paradigms</small></h1>
+        <h1>DocForge</h1>
         <p class="project-description"> DocForge is an open-source, local-first multi-agent system that enables Document-Driven Development (DDD)—a spec-first paradigm where detailed product documentation serves as the primary source of truth for development. DocForge enables documentation writers to shift left in the SDLC by surfacing documentation impact at the moment engineering decisions change, rather than after features are built or released. Instead of relying on downstream audits, DocForge provides early, advisory signals when code changes or architectural decisions affect documentation. This allows writers to engage while context is fresh and design intent is still fluid.</p>
 
         <div class="section">
@@ -66,31 +66,101 @@
         
             <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 35px;">
 
-                <details style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <summary style="padding: 15px; font-weight: bold; cursor: pointer; background: #f8fafc; display: flex; align-items: center;">
-                        <i class="fas fa-eye" style="margin-right: 12px; color: #00008b; width: 20px;"></i> 
-                        <span>The Strategic Gap: Documentation-Code Parity</span>
-                    </summary>
-                    <div style="padding: 30px; text-align: center; border-top: 1px solid #e2e8f0; background: #ffffff;">
-                        <h4 style="color: #00008b; margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">The Problem Space: The "Documentation Debt" Bottleneck</h4>
-                        <p style="margin-top: 20px; font-size: 0.95rem; color: #444; font-style: italic; max-width: 850px; margin-left: auto; margin-right: auto;">
-                            Illustrating the high cost of late discovery and black box risk in documentation.
-                        </p>
-                    </div>
-                </details>
+              <details style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <summary style="padding: 15px; font-weight: bold; cursor: pointer; background: #f8fafc; display: flex; align-items: center;">
+                    <i class="fas fa-eye" style="margin-right: 12px; color: #00008b; width: 20px;"></i> 
+                    <span>The Strategic Gap: Documentation-Code Parity</span>
+                </summary>
+                <div style="padding: 30px; border-top: 1px solid #e2e8f0; background: #ffffff;">
+                    <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">The Problem Space: The "Documentation Debt" Bottleneck</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+                        In high-velocity Agile environments, documentation is frequently treated as a downstream artifact—a "cleanup task" performed after the code is merged. This creates a structural "Documentation Debt" where the PRD, the design specs, and the final implementation inevitably drift apart.
+                    </p>
+                    <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+                        <li>The High Cost of Late Discovery: When documentation is authored post-release (General Availability chaos), technical gaps and logic inconsistencies are discovered too late, leading to expensive re-work and delayed launches.</li>
+                        <li>The "Black Box" Risk: Without deterministic parity, auditors and enterprise clients view the software as a black box, increasing compliance friction and reducing trust in the product's reliability.</li>
+                    </ul>
+                    
+                    <h4 style="color: #00008b; margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">The DDD Mission: From Delivery Task to Design Discipline</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+                        DocForge enables Document-Driven Development (DDD) by repositioning documentation as the primary source of truth for the entire development lifecycle.
+                    </p>
+                    <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+                        <li>Shifting Left: Instead of waiting for code stability, DocForge surfaces documentation impact the moment a design decision is made or an interface contract is altered.</li>
+                        <li>Design Authority: By treating the specification as the "Master," we ensure that clarity is established before resources are committed to engineering, making gaps visible when they are least expensive to fix.</li>
+                        <li>Clarity as a Requirement: DocForge is architected for environments where clarity is not an afterthought but a core product requirement—such as API-first platforms and compliance-critical industries.</li>
+                    </ul>
             
-                <details style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <summary style="padding: 15px; font-weight: bold; cursor: pointer; background: #f8fafc; display: flex; align-items: center;">
-                        <i class="fas fa-brain" style="margin-right: 12px; color: #00008b; width: 20px;"></i> 
-                        <span>Intentional Constraints (The Anti-Scope)</span>
-                    </summary>
-                    <div style="padding: 30px; text-align: center; border-top: 1px solid #e2e8f0; background: #ffffff;">
-                        <h4 style="color: #00008b; margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Business Strategy & Value Stream</h4>
-                        <p style="margin-top: 20px; font-size: 0.95rem; color: #444; font-style: italic; max-width: 850px; margin-left: auto; margin-right: auto;">
-                            Value stream mapping optimizing lead time using SAFe framework.
-                        </p>
-                    </div>
-                </details>
+                    <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+                        <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                            <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+                            <span>TOGAF Approach: Architecture Diagram</span>
+                        </summary>
+                        <div style="padding: 15px; text-align: center; background: #ffffff;">
+                            <img src="docforge_togaf_diagram.png" alt="TOGAF ADM Cycle for DocForge" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                                Illustration of TOGAF ADM phases applied to DocForge's architecture, showing business, data, application, and technology layers for drift detection.
+                            </p>
+                        </div>
+                    </details>
+            
+                    <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+                        <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                            <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+                            <span>SAFe Approach: Value Stream Mapping</span>
+                        </summary>
+                        <div style="padding: 15px; text-align: center; background: #ffffff;">
+                            <img src="docforge_safe_vsm.png" alt="SAFe Value Stream for Documentation Workflow" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                                SAFe value stream map optimizing the continuous delivery pipeline, reducing non-value-added time in documentation audits.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </details>
+            
+            <details style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <summary style="padding: 15px; font-weight: bold; cursor: pointer; background: #f8fafc; display: flex; align-items: center;">
+                    <i class="fas fa-brain" style="margin-right: 12px; color: #00008b; width: 20px;"></i> 
+                    <span>Intentional Constraints (The Anti-Scope)</span>
+                </summary>
+                <div style="padding: 30px; border-top: 1px solid #e2e8f0; background: #ffffff;">
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 20px;">
+                        To maintain the "Google Bar" for engineering focus and reliability, DocForge operates within strict Architectural Guardrails to avoid "Automation Creep":
+                    </p>
+                    <ul style="font-size: 0.95rem; line-height: 1.6; color: #444; list-style-type: disc; padding-left: 20px; margin-bottom: 20px;">
+                        <li>No Auto-Commits: DocForge identifies drift and suggests remediations but never writes to the repository or master branch automatically; the human Tech Writer remains the final "Design Authority."</li>
+                        <li>Interface-First Focus: The MVP intentionally ignores internal function logic to avoid "noise," focusing strictly on Interface Contracts (API signatures, parameter types, and exported classes).</li>
+                        <li>Clarity over Creativity: The system is designed to enforce the "Google Developer Style Guide" for technical precision; it does not intend to replace the strategic narrative or creative voice of a professional writer.</li>
+                    </ul>
+            
+                    <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 20px; overflow: hidden;">
+                        <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                            <i class="fas fa-diagram-project" style="margin-right: 10px; color: #00008b;"></i> 
+                            <span>TOGAF Approach: Guardrails Diagram</span>
+                        </summary>
+                        <div style="padding: 15px; text-align: center; background: #ffffff;">
+                            <img src="docforge_togaf_guardrails.png" alt="TOGAF Architectural Guardrails" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                                TOGAF-based diagram depicting architectural guardrails to prevent scope creep in DocForge.
+                            </p>
+                        </div>
+                    </details>
+            
+                    <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin-top: 15px; overflow: hidden;">
+                        <summary style="padding: 10px; font-weight: bold; cursor: pointer; color: #00008b; display: flex; align-items: center;">
+                            <i class="fas fa-stream" style="margin-right: 10px; color: #00008b;"></i> 
+                            <span>SAFe Approach: Anti-Scope Value Stream</span>
+                        </summary>
+                        <div style="padding: 15px; text-align: center; background: #ffffff;">
+                            <img src="docforge_safe_antiscopes.png" alt="SAFe Anti-Scope Value Stream" style="width: 100%; max-width: 800px; height: auto; border: 1px solid #ddd; border-radius: 4px;">
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">
+                                SAFe diagram illustrating value stream constraints to maintain focus and reliability.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </details>
 
                 <details style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                     <summary style="padding: 15px; font-weight: bold; cursor: pointer; background: #f8fafc; display: flex; align-items: center;">
