@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+.DS_Store
+
+# DocForge Sovereign Data
+# Ignore all files in data...
+data/*
+# ...BUT keep the folder structure for other users
+!data/.gitkeep
+!data/inputs/.gitkeep
+!data/vectors/.gitkeep
+!data/logs/.gitkeep
+
+# Vector Stores (Generated locally)
+chroma_db/
+faiss_index/
+
+# IDE settings (Optional)
+.vscode/
+.idea/

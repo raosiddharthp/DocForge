@@ -1,0 +1,11 @@
+langgraph
+langchain
+langchain-community
+langchain-ollama
+tree-sitter
+tree-sitter-python
+tree-sitter-javascript
+faiss-cpu
+rich
+pyyaml
+pydantic
